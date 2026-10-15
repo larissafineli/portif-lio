@@ -1,0 +1,20 @@
+{
+  "experiencias": [
+    {
+      "instituicao": "PUC Minas",
+      "inicio": null,
+      "fim": null,
+      "pt": {
+        "cargo": "Graduação em Engenharia de Software",
+        "descricao": "Disciplinas com projetos práticos de desenvolvimento web e back-end.",
+        "detalhe": "Período e atividades complementares a informar."
+      },
+      "en": {
+        "cargo": "Software Engineering undergraduate",
+        "descricao": "Coursework with hands-on web and back-end development projects.",
+        "detalhe": "Term and complementary activities to be informed."
+      }
+    }
+  ],
+  "formacaoComplementar": []
+}

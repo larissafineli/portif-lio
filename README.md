@@ -2,54 +2,39 @@
 
 Portfólio profissional desenvolvido para o **Laboratório 01 de Desenvolvimento e Integração de Aplicações Web**, do curso de Engenharia de Software da PUC Minas.
 
-O site apresenta minha trajetória, meus projetos publicados e meus canais de contato, com conteúdo em português e inglês. A identidade visual usa bege e rosa.
+Site de página única em estilo bento grid, com identidade visual em bege e rosa, conteúdo em português e inglês.
 
 **[Acessar o portfólio](https://larissafineli.github.io/portif-lio/)** (endereço previsto para o GitHub Pages)
 
 ## Status do projeto
 
-- Interface estática em HTML, CSS e JavaScript, com pastas separadas.
-- Conteúdo de perfil, projetos e experiências em arquivos JSON.
-- Um projeto apresentado: Receitas de Minas.
-- Conferido visualmente no desktop e no celular; sem suíte de testes automatizados.
-- **Etapas pendentes para a entrega:** publicar no GitHub Pages e completar os dados pessoais marcados como “a informar” (período da graduação e atividades complementares).
-- O formulário de contato não foi implementado nesta versão; o contato acontece por e-mail institucional e GitHub.
-
-## Índice
-
-- [Sobre o projeto](#sobre-o-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias e dependências](#tecnologias-e-dependências)
-- [Estrutura de pastas](#estrutura-de-pastas)
-- [Instalação e execução](#instalação-e-execução)
-- [Deploy no GitHub Pages](#deploy-no-github-pages)
-- [Autor](#autor)
-
-## Sobre o projeto
-
-O site reúne minha apresentação, o projeto Receitas de Minas e minha formação. Funciona como site estático em hospedagem gratuita, sem servidor de aplicação.
-
-O conteúdo fica em arquivos JSON, então dá para atualizar textos e projetos sem mexer no layout.
+- Página única com seções de Sobre, Experiências, Stack, Projeto e Contato.
+- Conteúdo em arquivos JSON, separado da apresentação.
+- Formação acadêmica apresentada dentro de Experiências.
+- Conferido visualmente em 1440, 980, 768, 390 e 360 px, sem rolagem horizontal e sem erro de JavaScript.
+- **Pendente para a entrega:** publicar no GitHub Pages e completar os dados marcados como "a informar".
+- O formulário de contato não foi implementado; o contato acontece por e-mail, LinkedIn e GitHub.
 
 ## Funcionalidades
 
-| Página | Conteúdo |
+| Seção | Conteúdo |
 |---|---|
-| Sobre mim | Apresentação, formação e tecnologias. |
-| Projetos | Linha do tempo gerada a partir do JSON, com tecnologias, imagem e link do repositório. |
-| Experiências | Formação acadêmica e atividades. |
+| Sobre | Apresentação e objetivo profissional. |
+| Experiências | Formação acadêmica e projetos de disciplina em tabela cronológica. |
+| Stack | Tecnologias usadas nos estudos. |
+| Projeto | Receitas de Minas, com imagem, tecnologias e link do repositório. |
 | Contato | E-mail, LinkedIn e GitHub. |
 
-A troca PT/EN traduz a interface e os dados.
+A troca PT/EN traduz todos os textos da interface e dos dados. A seção ativa é destacada no menu durante a rolagem.
 
 ## Tecnologias e dependências
 
 | Camada | Tecnologia | Papel |
 |---|---|---|
-| Estrutura | HTML5 | Páginas e navegação. |
-| Apresentação | CSS3 | Layout responsivo e identidade visual. |
-| Comportamento | JavaScript com módulos nativos | Leitura dos JSONs, idioma e menu. |
-| Conteúdo | JSON | Perfil, traduções e projetos. |
+| Estrutura | HTML5 | Página única e seções semânticas. |
+| Apresentação | CSS3 | Grade modular responsiva e identidade visual. |
+| Comportamento | JavaScript com módulos nativos | Leitura dos JSONs, idioma e destaque da seção ativa. |
+| Conteúdo | JSON | Perfil, experiências e projetos. |
 | Ícones | SVG local | Ícones e marca sem dependências externas. |
 | Hospedagem | GitHub Pages | Publicação dos arquivos estáticos. |
 
@@ -61,21 +46,15 @@ A troca PT/EN traduz a interface e os dados.
 
 ```text
 portif-lio/
-├── index.html                 # Ponto de entrada da hospedagem
-├── html/
-│   ├── sobre.html
-│   ├── projetos.html
-│   ├── experiencias.html
-│   └── contato.html
+├── index.html                 # Página única com todas as seções
 ├── css/
-│   └── style.css
+│   └── style.css              # Grade modular, cores e responsividade
 ├── js/
-│   ├── app.js
-│   └── entrada.js
+│   └── app.js                 # Dados, idioma e navegação entre seções
 ├── data/
-│   ├── perfil.json
-│   ├── projetos.json
-│   └── experiencias.json
+│   ├── perfil.json            # Dados pessoais, textos PT/EN e stack
+│   ├── experiencias.json      # Formação e projetos acadêmicos
+│   └── projetos.json          # Projetos publicados
 ├── assets/
 │   ├── favicon.svg
 │   └── projects/              # Imagem do projeto
@@ -99,12 +78,11 @@ Os arquivos JSON são carregados com `fetch`, por isso é preciso um servidor HT
 
 | Arquivo | O que editar |
 |---|---|
-| `data/perfil.json` | Dados do perfil, tecnologias e textos PT/EN. |
+| `data/perfil.json` | Nome, textos PT/EN, stack e dados de contato. |
+| `data/experiencias.json` | Formação, cursos e projetos acadêmicos. |
 | `data/projetos.json` | Projetos, datas, tecnologias, imagens e links. |
-| `data/experiencias.json` | Formação e atividades. |
-| `css/style.css` | Cores, tamanhos e comportamento responsivo. |
-| `html/*.html` | Estrutura de cada página. |
-| `js/app.js` | Carregamento dos dados, idioma e interações. |
+| `css/style.css` | Cores, grade e comportamento responsivo. |
+| `js/app.js` | Renderização das seções e troca de idioma. |
 
 ## Deploy no GitHub Pages
 
@@ -116,6 +94,14 @@ Os arquivos JSON são carregados com `fetch`, por isso é preciso um servidor HT
 6. O site fica em <https://larissafineli.github.io/portif-lio/>.
 
 Não existe etapa de build. O arquivo `.nojekyll` indica que o conteúdo deve ser servido como arquivos estáticos.
+
+## Decisões de interface
+
+- Grade modular com cards de larguras diferentes, em vez de uma página de seções longas.
+- Bege como base e rosa como cor de destaque, com contraste verificado nos textos.
+- Formação dentro de Experiências, para não duplicar a mesma informação em dois blocos.
+- Rótulos em caixa alta com marcador e tabela cronológica sem parágrafos longos, para leitura rápida.
+- Texto mínimo de 12px e alvos de toque de pelo menos 44px.
 
 ## Autor
 

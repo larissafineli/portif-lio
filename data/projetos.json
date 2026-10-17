@@ -11,14 +11,14 @@
     "repositorio": "https://github.com/larissafineli/receitas-de-minas",
     "imagem": "assets/projects/receitas-de-minas.jpg",
     "pt": {
-      "tipo": "Site de receitas · Trabalho de disciplina",
+      "tipo": "HTML e CSS",
       "descricao": "Site com receitas típicas mineiras, organizado em HTML e estilizado com CSS.",
       "contribuicao": "Criei a estrutura das páginas, a estilização e o conteúdo das receitas, com imagens dos pratos.",
       "legenda": "Imagem de prato usada no site do projeto.",
       "alt": "Pão de queijo, imagem usada no site Receitas de Minas"
     },
     "en": {
-      "tipo": "Recipe website · Coursework",
+      "tipo": "HTML and CSS",
       "descricao": "A website with traditional recipes from Minas Gerais, structured in HTML and styled with CSS.",
       "contribuicao": "I built the page structure, the styling and the recipe content, including photos of the dishes.",
       "legenda": "Dish photo used on the project website.",

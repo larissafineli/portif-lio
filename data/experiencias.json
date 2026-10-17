@@ -1,20 +1,28 @@
 {
   "experiencias": [
     {
+      "tipo": "formacao",
       "instituicao": "PUC Minas",
-      "inicio": null,
-      "fim": null,
+      "periodo": "Em andamento",
+      "inicio": "2026",
       "pt": {
-        "cargo": "Graduação em Engenharia de Software",
-        "descricao": "Disciplinas com projetos práticos de desenvolvimento web e back-end.",
-        "detalhe": "Período e atividades complementares a informar."
+        "cargo": "Graduação em Engenharia de Software"
       },
       "en": {
-        "cargo": "Software Engineering undergraduate",
-        "descricao": "Coursework with hands-on web and back-end development projects.",
-        "detalhe": "Term and complementary activities to be informed."
+        "cargo": "BSc in Software Engineering"
+      }
+    },
+    {
+      "tipo": "projetos",
+      "instituicao": "Disciplinas do curso",
+      "periodo": "2026 · projetos",
+      "inicio": "2026",
+      "pt": {
+        "cargo": "Projetos acadêmicos"
+      },
+      "en": {
+        "cargo": "Coursework projects"
       }
     }
-  ],
-  "formacaoComplementar": []
+  ]
 }

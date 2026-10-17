@@ -6,10 +6,12 @@
       "periodo": "Em andamento",
       "inicio": "2026",
       "pt": {
-        "cargo": "Engenharia de Software"
+        "cargo": "Engenharia de Software",
+        "periodo": "Em andamento"
       },
       "en": {
-        "cargo": "Software Engineering"
+        "cargo": "Software Engineering",
+        "periodo": "In progress"
       },
       "local": "Belo Horizonte, MG"
     },
@@ -19,10 +21,13 @@
       "periodo": "2026 · projetos",
       "inicio": "2026",
       "pt": {
-        "cargo": "Projetos acadêmicos"
+        "cargo": "Projetos acadêmicos",
+        "periodo": "2026"
       },
       "en": {
-        "cargo": "Coursework projects"
+        "cargo": "Coursework projects",
+        "periodo": "2026",
+        "instituicao": "University coursework"
       }
     }
   ]

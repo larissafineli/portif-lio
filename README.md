@@ -1,74 +1,39 @@
 # Portfólio · Larissa Fineli
 
-Portfólio profissional desenvolvido para o **Laboratório 01 de Desenvolvimento e Integração de Aplicações Web**, do curso de Engenharia de Software da PUC Minas.
+Portfólio desenvolvido para o **Laboratório 01 de Desenvolvimento e Integração de Aplicações Web**, do curso de Engenharia de Software da PUC Minas.
 
-Site com quatro páginas em estilo bento grid, com identidade visual em bege e rosa, ícones SVG e conteúdo em português e inglês.
+Quatro páginas independentes, com navegação compartilhada, conteúdo em português e inglês e identidade em bege, branco e rosa.
 
-**[Acessar o portfólio](https://larissafineli.github.io/portif-lio/)** (endereço previsto para o GitHub Pages)
+**Endereço previsto:** <https://larissafineli.github.io/portif-lio/>. A publicação depende do merge da contribuição e da ativação do GitHub Pages pela proprietária do repositório.
 
-## Status do projeto
-
-- Quatro páginas com menu de navegação: Sobre, Experiências, Projetos e Contato.
-- Conteúdo em arquivos JSON, separado da apresentação.
-- Formação acadêmica apresentada dentro de Experiências, em tabela cronológica.
-- Ícones SVG locais para tecnologias, seções, contatos e para o card do projeto.
-- Conferido visualmente em 1440, 980, 768, 390 e 360 px, sem rolagem horizontal e sem erro de JavaScript.
-- **Pendente para a entrega:** publicar no GitHub Pages e completar os dados marcados como "a informar".
-- O formulário de contato não foi implementado; o contato acontece por e-mail, LinkedIn e GitHub.
-
-## Funcionalidades
+## Páginas
 
 | Página | Conteúdo |
 |---|---|
-| Sobre | Apresentação, stack com ícones das tecnologias e projeto em destaque. |
-| Experiências | Formação acadêmica e projetos de disciplina em tabela cronológica. |
-| Projetos | Receitas de Minas, com ícone, tecnologias e link do repositório. |
-| Contato | E-mail, LinkedIn e GitHub, com ícones. |
+| Sobre | Apresentação, projeto em destaque e stack agrupada por área. |
+| Projetos | Receitas de Minas, com ícone de chef, descrição, tecnologias e repositório. |
+| Experiências | Engenharia de Software na PUC Minas e prática nos projetos acadêmicos. |
+| Contato | E-mail, LinkedIn e GitHub. Não há formulário ou envio pelo site. |
 
-A troca PT/EN traduz todos os textos da interface e dos dados. A seção ativa é destacada no menu durante a rolagem.
+O idioma é escolhido nos botões PT/EN, preservado entre as páginas e registrado no parâmetro `lang` da URL. A página atual fica sublinhada no menu.
 
-## Tecnologias e dependências
+## Tecnologias
 
-| Camada | Tecnologia | Papel |
-|---|---|---|
-| Estrutura | HTML5 | Página única e seções semânticas. |
-| Apresentação | CSS3 | Grade modular responsiva e identidade visual. |
-| Comportamento | JavaScript com módulos nativos | Leitura dos JSONs, idioma e destaque da seção ativa. |
-| Conteúdo | JSON | Perfil, experiências e projetos. |
-| Tipografia | Google Fonts | Instrument Serif nos títulos e Plus Jakarta Sans no texto. |
-| Ícones | SVG local | Ícones e marca sem dependências externas. |
-| Hospedagem | GitHub Pages | Publicação dos arquivos estáticos. |
+| Camada | Implementação |
+|---|---|
+| Estrutura | HTML5, em quatro documentos semânticos. |
+| Estilo | CSS próprio, com tokens compartilhados e layouts responsivos. |
+| Comportamento | JavaScript com módulos nativos e leitura dos JSONs. |
+| Conteúdo | JSON para perfil, stack, projetos, experiências e traduções. |
+| Tipografia | Manrope variável, hospedada localmente, com licença OFL. |
+| Ícones | Sprite SVG compartilhado e arquivos locais das tecnologias. |
+| Hospedagem | Arquivos estáticos compatíveis com GitHub Pages. |
 
-**Bibliotecas de terceiros:** nenhuma além das fontes do Google Fonts. Não há `npm install`, compilação, banco de dados ou chave secreta.
+Não há Bootstrap, framework JavaScript, etapa de build, banco de dados ou chave secreta. Fontes e ícones não dependem de CDN.
 
-**Para executar localmente:** navegador atualizado e Python 3 para servir os arquivos por HTTP.
+A stack exibida no perfil inclui **HTML5, CSS3, JavaScript, Java, Python, Spring Boot, Git e GitHub**. Essa lista descreve os estudos da autora; não significa que todas essas tecnologias foram usadas neste site ou no Receitas de Minas. O projeto em destaque permanece identificado como HTML e CSS.
 
-## Estrutura de pastas
-
-```text
-portif-lio/
-├── index.html                 # Ponto de entrada da hospedagem
-├── html/
-│   ├── sobre.html
-│   ├── experiencias.html
-│   ├── projetos.html
-│   └── contato.html
-├── css/
-│   └── style.css              # Grade modular, cores e responsividade
-├── js/
-│   └── app.js                 # Dados, idioma e troca de página
-├── data/
-│   ├── perfil.json            # Dados pessoais, textos PT/EN e stack
-│   ├── experiencias.json      # Formação e projetos acadêmicos
-│   └── projetos.json          # Projetos publicados
-├── assets/
-│   ├── favicon.svg
-│   └── tech/                  # Ícones SVG das tecnologias
-├── .nojekyll
-└── README.md
-```
-
-## Instalação e execução
+## Executar localmente
 
 ```bash
 git clone https://github.com/larissafineli/portif-lio.git
@@ -76,46 +41,64 @@ cd portif-lio
 python3 -m http.server 8000
 ```
 
-Acesse <http://localhost:8000/> e encerre com `Ctrl+C`.
+Abra <http://localhost:8000/>. Encerre o servidor com `Ctrl+C`.
 
-Os arquivos JSON são carregados com `fetch`, por isso é preciso um servidor HTTP local. Abrir o arquivo com duplo clique (`file://`) não carrega os dados.
+Os JSONs são carregados com `fetch`, então é necessário servir os arquivos por HTTP. Abrir o HTML com duplo clique (`file://`) não carrega os dados atualizados.
 
-### Atualização do conteúdo
+## Estrutura
 
-| Arquivo | O que editar |
-|---|---|
-| `data/perfil.json` | Nome, textos PT/EN, stack e dados de contato. |
-| `data/experiencias.json` | Formação, cursos e projetos acadêmicos. |
-| `data/projetos.json` | Projetos, datas, tecnologias, imagens e links. |
-| `css/style.css` | Cores, grade e comportamento responsivo. |
-| `js/app.js` | Renderização das seções e troca de idioma. |
+```text
+portif-lio/
+├── index.html                 # Entrada e redirecionamento para Sobre
+├── html/                      # Sobre, Projetos, Experiências e Contato
+├── css/style.css              # Tokens, composição e responsividade
+├── js/app.js                  # Renderização, idioma e leitura dos dados
+├── data/
+│   ├── perfil.json            # Identidade, contatos, stack e traduções
+│   ├── experiencias.json      # Formação e prática acadêmica
+│   └── projetos.json          # Projeto e tecnologias realmente utilizadas
+├── assets/
+│   ├── favicon.svg
+│   ├── icons.svg              # Ícones de interface compartilhados
+│   ├── fonts/                 # Manrope e licença OFL
+│   └── tech/                  # Ícones de tecnologia e créditos
+├── .nojekyll
+└── README.md
+```
 
-## Deploy no GitHub Pages
+## Atualizar o conteúdo
 
-1. Enviar os arquivos para a branch `main`.
-2. Abrir **Settings → Pages** no repositório.
-3. Em **Source**, escolher **Deploy from a branch**.
-4. Selecionar a branch **main** e a pasta **/ (root)**.
-5. Salvar e aguardar a publicação.
-6. O site fica em <https://larissafineli.github.io/portif-lio/>.
+- **Perfil, contatos e traduções:** `data/perfil.json`.
+- **Tecnologias por área:** `stackGrupos` em `data/perfil.json`.
+- **Experiências e formação:** `data/experiencias.json`, com textos PT/EN por item.
+- **Projeto, contribuição e tecnologias:** `data/projetos.json`.
+- **Cores, fontes e layout:** `css/style.css`.
 
-Não existe etapa de build. O arquivo `.nojekyll` indica que o conteúdo deve ser servido como arquivos estáticos.
+Os documentos HTML têm conteúdo inicial para evitar uma tela vazia durante o carregamento. Ao alterar os dados, mantenha esse conteúdo inicial coerente. O JavaScript preenche a versão atualizada e permite alternar o idioma.
 
-## Decisões de interface
+## Interface e acessibilidade
 
-- Grade modular com cards de larguras diferentes em cada página, em vez de seções longas.
-- Ícones desenhados em SVG e embutidos no documento, sem dependência de CDN.
-- Bege como base e rosa como cor de destaque, com contraste verificado nos textos.
-- Formação dentro de Experiências, para não duplicar a mesma informação em dois blocos.
-- Rótulos em caixa alta com marcador e tabela cronológica sem parágrafos longos, para leitura rápida.
-- Texto mínimo de 12px e alvos de toque de pelo menos 44px.
+- Composição aberta, com divisórias em vez de cartões repetidos.
+- Manrope para títulos e textos, sem mistura de famílias tipográficas.
+- Rosa reservado a ações, navegação ativa e destaque do projeto.
+- Foco visível, link para pular ao conteúdo e botões de idioma com estado acessível.
+- Tecnologias agrupadas por proximidade, sem aparência de botões clicáveis.
+- Rótulos e nomes acessíveis em links que usam somente ícones.
+- Textos a partir de 12px, rodapé de 13px e alvos principais de pelo menos 44px.
+- Animações de interação desativadas quando o navegador solicita movimento reduzido.
 
-## Autor
+A revisão local incluiu as quatro rotas em 1440, 980, 800, 768, 760, 520, 390 e 360px, troca real de idioma e navegação. Não foi adicionada suíte de testes ou dependência de desenvolvimento ao projeto.
+
+## GitHub Pages
+
+Após mesclar a contribuição na `main`, a proprietária deve abrir **Settings → Pages**, escolher **Deploy from a branch**, selecionar **main** e **/ (root)** e salvar.
+
+Não há etapa de build. `.nojekyll` mantém a publicação como arquivos estáticos.
+
+## Autora
 
 **Larissa Fineli** · Engenharia de Software, PUC Minas.
 
 [GitHub](https://github.com/larissafineli) · [LinkedIn](https://www.linkedin.com/in/larissa-fineli-a8b413419/) · [E-mail](mailto:larissa4321ramos@gmail.com)
 
-## Agradecimentos
-
-Atividade orientada pelo Prof. João Paulo Carneiro Aramuni. Material acadêmico e pessoal.
+Atividade orientada pelo Prof. João Paulo Carneiro Aramuni.

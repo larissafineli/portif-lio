@@ -1,6 +1,6 @@
 // Conteúdo do portfólio em JSON; sem backend e sem credenciais neste projeto.
 const root = new URL('../', import.meta.url);
-const page = 'home';
+const page = document.body.dataset.page;
 const node = (tag, className, text) => {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -12,7 +12,7 @@ const icon = (name) => {
   svg.classList.add('icon');
   svg.setAttribute('aria-hidden', 'true');
   const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-  use.setAttribute('href', `#icon-${name}`);
+  use.setAttribute('href', `#t-${name}`);
   svg.append(use);
   return svg;
 };
@@ -29,43 +29,73 @@ function readLanguage() {
 }
 let language = readLanguage();
 let profile, experiences, projects = [];
+const locale = () => language === 'pt' ? 'pt-BR' : 'en-US';
+const monthYear = (date) => new Intl.DateTimeFormat(locale(), {
+  month: 'short', year: 'numeric', timeZone: 'UTC'
+}).format(new Date(`${date.slice(0, 7)}-01T12:00:00Z`));
+const TECH_ICONS = {
+  'HTML5':'html5','CSS3':'css3','HTML / CSS':'html5','JavaScript':'javascript',
+  'Java':'java','Git & GitHub':'git','Git':'git','GitHub':'github'
+};
 
-function renderExperience() {
-  const target = document.querySelector('#exp-list');
-  if (!target || !experiences) return;
-  target.replaceChildren();
-  experiences.experiencias.forEach(item => {
-    const row = node('div', 'exp-row');
-    const heading = node('h3', '', item[language].cargo);
-    const org = node('span', 'org', item.instituicao);
-    const period = node('time', '', item.periodo);
-    row.append(heading, period, org);
-    if (item[language].detalhe) row.append(node('p', 'detail', item[language].detalhe));
-    target.append(row);
-  });
+function techChip(label) {
+  const chip = node('span', 'tech');
+  const iconName = TECH_ICONS[label];
+  if (iconName) chip.append(icon(iconName));
+  chip.append(node('span', '', label));
+  return chip;
 }
 function renderStack() {
   const target = document.querySelector('#stack-chips');
   if (!target) return;
   target.replaceChildren();
-  profile.tecnologias.forEach(item => target.append(node('span', 'chip', item)));
+  profile.tecnologias.forEach(item => target.append(techChip(item)));
+}
+function renderTimeline() {
+  const target = document.querySelector('#timeline');
+  if (!target || !experiences) return;
+  target.replaceChildren();
+  experiences.experiencias.forEach(item => {
+    const row = node('div', 'timeline-row');
+    const when = node('span', 'when', item.periodo);
+    const kind = node('span', 'kind', item.tipo === 'formacao'
+      ? profile[language].kindFormacao : profile[language].kindProjeto);
+    const heading = node('h3', '', item[language].cargo);
+    const org = node('span', 'org', item.instituicao);
+    row.append(when, heading, org, kind);
+    if (item[language].detalhe) row.append(node('p', 'detail', item[language].detalhe));
+    target.append(row);
+  });
 }
 function renderProject() {
   const project = projects[0];
   if (!project) return;
   const detail = project[language];
-  const image = document.querySelector('#project-image');
-  image.src = new URL(project.imagem, root).href;
-  image.alt = detail.alt;
+  const image = document.querySelector('#project-image') || document.querySelector('#featured-image');
+  if (image) {
+    image.src = new URL(project.imagem, root).href;
+    image.alt = detail.alt;
+  }
   const media = document.querySelector('#project-media');
-  media.href = project.repositorio;
-  document.querySelector('#project-title').textContent = project.nome;
-  document.querySelector('#project-description').textContent = `${detail.descricao} ${detail.contribuicao}`;
+  if (media) media.href = project.repositorio;
+  const title = document.querySelector('#project-title') || document.querySelector('#featured-title');
+  if (title) title.textContent = project.nome;
+  const description = document.querySelector('#project-description') || document.querySelector('#featured-description');
+  if (description) description.textContent = `${detail.descricao} ${detail.contribuicao}`;
+  const kind = document.querySelector('#project-kind');
+  if (kind) kind.textContent = detail.tipo;
   const tags = document.querySelector('#project-tags');
-  tags.replaceChildren();
-  project.tecnologias.forEach(item => tags.append(node('span', 'chip', item)));
+  if (tags) {
+    tags.replaceChildren();
+    project.tecnologias.forEach(item => tags.append(techChip(item)));
+  }
   const link = document.querySelector('#project-link');
-  link.href = project.repositorio;
+  if (link) link.href = project.repositorio;
+  const date = document.querySelector('#project-date');
+  if (date) {
+    date.dateTime = project.publicadoEm;
+    date.textContent = `${profile[language].published}: ${monthYear(project.publicadoEm)}`;
+  }
 }
 function renderLanguage() {
   const text = profile[language];
@@ -77,23 +107,17 @@ function renderLanguage() {
   document.querySelectorAll('[data-language]').forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.language === language));
   });
-  document.title = `${profile.nome} · Portfólio`;
-  renderExperience();
+  const titleKey = { about: 'aboutTitleDocument', projects: 'projectsTitleDocument',
+    experience: 'experienceTitleDocument', contact: 'contactTitleDocument' }[page];
+  if (titleKey && text[titleKey]) document.title = `${text[titleKey]} · ${profile.nome}`;
+  document.querySelectorAll('a[data-internal]').forEach(link => {
+    const url = new URL(link.getAttribute('href'), location.href);
+    url.searchParams.set('lang', language);
+    link.href = url.href;
+  });
   renderStack();
+  renderTimeline();
   renderProject();
-}
-function markCurrentSection() {
-  const links = [...document.querySelectorAll('.navpill a')];
-  const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      links.forEach(link => link.removeAttribute('aria-current'));
-      const active = links.find(link => link.getAttribute('href') === `#${entry.target.id}`);
-      if (active) active.setAttribute('aria-current', 'true');
-    });
-  }, { rootMargin: '-45% 0px -45% 0px' });
-  sections.forEach(section => observer.observe(section));
 }
 function showError(error) {
   console.error(error);
@@ -105,9 +129,7 @@ function showError(error) {
   }
 }
 async function init() {
-  [profile, experiences, projects] = await Promise.all([
-    loadJSON('perfil.json'), loadJSON('experiencias.json'), loadJSON('projetos.json')
-  ]);
+  profile = await loadJSON('perfil.json');
   document.querySelectorAll('[data-language]').forEach(button => {
     button.addEventListener('click', () => {
       language = button.dataset.language;
@@ -118,8 +140,9 @@ async function init() {
       renderLanguage();
     });
   });
+  if (page === 'projects' || page === 'about') projects = await loadJSON('projetos.json');
+  if (page === 'experience') experiences = await loadJSON('experiencias.json');
   renderLanguage();
-  markCurrentSection();
   const status = document.querySelector('#content-status');
   if (status) status.hidden = true;
 }

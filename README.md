@@ -2,28 +2,28 @@
 
 Portfólio profissional desenvolvido para o **Laboratório 01 de Desenvolvimento e Integração de Aplicações Web**, do curso de Engenharia de Software da PUC Minas.
 
-Site de página única em estilo bento grid, com identidade visual em bege e rosa, conteúdo em português e inglês.
+Site com quatro páginas em estilo bento grid, com identidade visual em bege e rosa, ícones SVG e conteúdo em português e inglês.
 
 **[Acessar o portfólio](https://larissafineli.github.io/portif-lio/)** (endereço previsto para o GitHub Pages)
 
 ## Status do projeto
 
-- Página única com seções de Sobre, Experiências, Stack, Projeto e Contato.
+- Quatro páginas com menu de navegação: Sobre, Experiências, Projetos e Contato.
 - Conteúdo em arquivos JSON, separado da apresentação.
-- Formação acadêmica apresentada dentro de Experiências.
+- Formação acadêmica apresentada dentro de Experiências, em tabela cronológica.
+- Ícones SVG locais para tecnologias, seções e contatos.
 - Conferido visualmente em 1440, 980, 768, 390 e 360 px, sem rolagem horizontal e sem erro de JavaScript.
 - **Pendente para a entrega:** publicar no GitHub Pages e completar os dados marcados como "a informar".
 - O formulário de contato não foi implementado; o contato acontece por e-mail, LinkedIn e GitHub.
 
 ## Funcionalidades
 
-| Seção | Conteúdo |
+| Página | Conteúdo |
 |---|---|
-| Sobre | Apresentação e objetivo profissional. |
+| Sobre | Apresentação, stack com ícones das tecnologias e projeto em destaque. |
 | Experiências | Formação acadêmica e projetos de disciplina em tabela cronológica. |
-| Stack | Tecnologias usadas nos estudos. |
-| Projeto | Receitas de Minas, com imagem, tecnologias e link do repositório. |
-| Contato | E-mail, LinkedIn e GitHub. |
+| Projetos | Receitas de Minas, com imagem, tecnologias e link do repositório. |
+| Contato | E-mail, LinkedIn e GitHub, com ícones. |
 
 A troca PT/EN traduz todos os textos da interface e dos dados. A seção ativa é destacada no menu durante a rolagem.
 
@@ -46,17 +46,23 @@ A troca PT/EN traduz todos os textos da interface e dos dados. A seção ativa �
 
 ```text
 portif-lio/
-├── index.html                 # Página única com todas as seções
+├── index.html                 # Ponto de entrada da hospedagem
+├── html/
+│   ├── sobre.html
+│   ├── experiencias.html
+│   ├── projetos.html
+│   └── contato.html
 ├── css/
 │   └── style.css              # Grade modular, cores e responsividade
 ├── js/
-│   └── app.js                 # Dados, idioma e navegação entre seções
+│   └── app.js                 # Dados, idioma e troca de página
 ├── data/
 │   ├── perfil.json            # Dados pessoais, textos PT/EN e stack
 │   ├── experiencias.json      # Formação e projetos acadêmicos
 │   └── projetos.json          # Projetos publicados
 ├── assets/
 │   ├── favicon.svg
+│   ├── tech/                  # Ícones SVG das tecnologias
 │   └── projects/              # Imagem do projeto
 ├── .nojekyll
 └── README.md
@@ -97,7 +103,8 @@ Não existe etapa de build. O arquivo `.nojekyll` indica que o conteúdo deve se
 
 ## Decisões de interface
 
-- Grade modular com cards de larguras diferentes, em vez de uma página de seções longas.
+- Grade modular com cards de larguras diferentes em cada página, em vez de seções longas.
+- Ícones desenhados em SVG e embutidos no documento, sem dependência de CDN.
 - Bege como base e rosa como cor de destaque, com contraste verificado nos textos.
 - Formação dentro de Experiências, para não duplicar a mesma informação em dois blocos.
 - Rótulos em caixa alta com marcador e tabela cronológica sem parágrafos longos, para leitura rápida.

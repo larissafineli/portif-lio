@@ -1,0 +1,131 @@
+{
+  "nome": "Larissa Fineli",
+  "nomeCompleto": "Larissa Fineli",
+  "local": "Belo Horizonte, MG",
+  "email": "larissa4321ramos@gmail.com",
+  "github": "https://github.com/larissafineli",
+  "linkedin": "https://www.linkedin.com/in/larissa-fineli-a8b413419/",
+  "stackGrupos": [
+    {
+      "id": "frontend",
+      "label": {
+        "pt": "Front-end",
+        "en": "Front-end"
+      },
+      "itens": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": "backend",
+      "label": {
+        "pt": "Back-end",
+        "en": "Back-end"
+      },
+      "itens": [
+        "Java",
+        "Python",
+        "Spring Boot"
+      ]
+    },
+    {
+      "id": "tools",
+      "label": {
+        "pt": "Ferramentas",
+        "en": "Tools"
+      },
+      "itens": [
+        "Git",
+        "GitHub"
+      ]
+    }
+  ],
+  "pt": {
+    "skip": "Ir para o conteúdo",
+    "navAbout": "Sobre",
+    "navProjects": "Projetos",
+    "navExperience": "Experiências",
+    "navContact": "Contato",
+    "aboutTitleDocument": "Sobre mim",
+    "projectsTitleDocument": "Projetos",
+    "experienceTitleDocument": "Experiências",
+    "contactTitleDocument": "Contato",
+    "heroKicker": "Estudante de Engenharia de Software",
+    "heroIntro": "Estudo Engenharia de Software na PUC Minas e estou aprendendo a desenvolver interfaces e aplicações backend.",
+    "viewProjects": "Ver meus projetos",
+    "talk": "Entrar em contato",
+    "location": "Belo Horizonte, MG",
+    "featuredLabel": "Projeto em destaque",
+    "featuredLink": "Conhecer o projeto",
+    "stackTitle": "Stack",
+    "projectsEyebrow": "Da ideia à prática",
+    "projectsTitle": "Projetos",
+    "projectsIntro": "Um pouco do que venho construindo durante a graduação.",
+    "experienceEyebrow": "Minha trajetória",
+    "experienceTitle": "Experiências",
+    "experienceIntro": "Minha trajetória até aqui, entre a graduação e os projetos da faculdade.",
+    "contactTitle": "Contato",
+    "contactChannels": "Você pode falar comigo por:",
+    "contactEmail": "E-mail",
+    "contactLinkedin": "LinkedIn",
+    "contactGithub": "GitHub",
+    "kindFormacao": "Graduação",
+    "kindProjeto": "Prática acadêmica",
+    "viewRepo": "Ver repositório",
+    "openProject": "Ver Receitas de Minas no GitHub",
+    "featuredAccessible": "Conhecer o projeto Receitas de Minas",
+    "published": "Primeira publicação",
+    "noProjects": "Nenhum projeto publicado nesta seleção.",
+    "noExperiences": "Nenhuma experiência cadastrada.",
+    "loading": "Carregando conteúdo…",
+    "loadError": "Não foi possível carregar os dados. Atualize a página para tentar novamente.",
+    "footerLeft": "© 2026 Larissa Fineli",
+    "footerRight": "Belo Horizonte · MG",
+    "noscript": "Ative o JavaScript para carregar os dados atualizados e trocar o idioma."
+  },
+  "en": {
+    "skip": "Skip to content",
+    "navAbout": "About",
+    "navProjects": "Projects",
+    "navExperience": "Experience",
+    "navContact": "Contact",
+    "aboutTitleDocument": "About",
+    "projectsTitleDocument": "Projects",
+    "experienceTitleDocument": "Experience",
+    "contactTitleDocument": "Contact",
+    "heroKicker": "Software Engineering student",
+    "heroIntro": "I study Software Engineering at PUC Minas and I’m learning to build web interfaces and backend applications.",
+    "viewProjects": "See my projects",
+    "talk": "Get in touch",
+    "location": "Belo Horizonte, Brazil",
+    "featuredLabel": "Featured project",
+    "featuredLink": "Explore the project",
+    "stackTitle": "Stack",
+    "projectsEyebrow": "Learning by building",
+    "projectsTitle": "Projects",
+    "projectsIntro": "A look at what I’ve been building during my degree.",
+    "experienceEyebrow": "My background",
+    "experienceTitle": "Experience",
+    "experienceIntro": "My path so far, through my degree and university projects.",
+    "contactTitle": "Contact",
+    "contactChannels": "You can reach me through:",
+    "contactEmail": "Email",
+    "contactLinkedin": "LinkedIn",
+    "contactGithub": "GitHub",
+    "kindFormacao": "Degree",
+    "kindProjeto": "Coursework",
+    "viewRepo": "View repository",
+    "openProject": "View Receitas de Minas on GitHub",
+    "featuredAccessible": "Explore the Receitas de Minas project",
+    "published": "First published",
+    "noProjects": "No published projects in this selection.",
+    "noExperiences": "No experience entries yet.",
+    "loading": "Loading content…",
+    "loadError": "The content could not be loaded. Refresh the page to try again.",
+    "footerLeft": "© 2026 Larissa Fineli",
+    "footerRight": "Belo Horizonte · Brazil",
+    "noscript": "Enable JavaScript to load up-to-date content and switch languages."
+  }
+}

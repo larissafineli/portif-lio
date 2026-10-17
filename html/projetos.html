@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de Larissa Fineli, estudante de Engenharia de Software na PUC Minas.">
+  <meta name="theme-color" content="#a83e63">
+  <title>Projetos · Larissa Fineli</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="module" src="../js/app.js"></script>
+</head>
+<body data-page="projects">
+  <a class="skip" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="sobre.html" data-internal>Larissa Fineli</a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="sobre.html" data-internal data-i18n="navAbout">Sobre</a>
+        <a href="projetos.html" data-internal data-i18n="navProjects" aria-current="page">Projetos</a>
+        <a href="experiencias.html" data-internal data-i18n="navExperience">Experiências</a>
+        <a href="contato.html" data-internal data-i18n="navContact">Contato</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Idioma / Language">
+        <button type="button" data-language="pt" aria-pressed="true" lang="pt-BR" aria-label="Português">PT</button>
+        <button type="button" data-language="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+      </div>
+    </header>
+    <main id="conteudo" tabindex="-1">
+      <header class="page-head page-head--illustrated">
+        <div class="page-head-copy">
+          <p class="eyebrow" data-i18n="projectsEyebrow">Da ideia à prática</p>
+          <h1 data-i18n="projectsTitle">Projetos</h1>
+          <p class="intro" data-i18n="projectsIntro">Um pouco do que venho construindo durante a graduação.</p>
+        </div>
+        <img class="section-3d" src="../assets/3d/projects-folder.webp" width="360" height="360" alt="" aria-hidden="true">
+      </header>
+      <article class="project-layout" id="project-card" aria-labelledby="project-title">
+        <a class="project-visual" id="project-media" href="https://github.com/larissafineli/receitas-de-minas" target="_blank" rel="noopener noreferrer" aria-label="Ver Receitas de Minas no GitHub" data-i18n-aria="openProject">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#i-chef"></use></svg>
+          <span class="visual-arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#i-external"></use></svg></span>
+        </a>
+        <div class="project-content">
+          <p class="eyebrow" id="project-kind">HTML e CSS</p>
+          <h2 id="project-title">Receitas de Minas</h2>
+          <p class="project-description" id="project-description">Site com receitas típicas mineiras, organizado em HTML e estilizado com CSS.</p>
+          <div id="project-tags"><ul class="tech-list"><li class="tech"><span class="tech-mark tech-mark--html5"><img class="tech-icon" src="../assets/tech/html5.svg" width="26" height="26" alt=""></span><span>HTML5</span></li><li class="tech"><span class="tech-mark tech-mark--css3"><img class="tech-icon" src="../assets/tech/css3.svg" width="26" height="26" alt=""></span><span>CSS3</span></li></ul></div>
+          <a class="text-link" id="project-link" href="https://github.com/larissafineli/receitas-de-minas" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#i-github"></use></svg><span data-i18n="viewRepo">Ver repositório</span><svg class="icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#i-external"></use></svg></a>
+          <time class="project-date" id="project-date" datetime="2026-03-02">Primeira publicação: mar. de 2026</time>
+        </div>
+      </article>
+      <p id="content-status" class="content-status" role="status" data-i18n="loading" hidden>Carregando conteúdo…</p>
+    </main>
+    <footer class="footer">
+      <span data-i18n="footerLeft">© 2026 Larissa Fineli</span>
+      <span data-i18n="footerRight">Belo Horizonte · MG</span>
+    </footer>
+  </div>
+  <noscript><p class="noscript">Ative o JavaScript para carregar os dados atualizados e trocar o idioma.</p></noscript>
+</body>
+</html>

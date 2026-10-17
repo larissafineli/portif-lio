@@ -46,10 +46,17 @@ function techChip(label) {
   return chip;
 }
 function renderStack() {
-  const target = document.querySelector('#stack-chips');
+  const target = document.querySelector('#stack-groups');
   if (!target) return;
   target.replaceChildren();
-  profile.tecnologias.forEach(item => target.append(techChip(item)));
+  (profile.stackGrupos || []).forEach(group => {
+    const block = node('div', 'stack-group');
+    block.append(node('p', 'stack-group-label', group.label));
+    const row = node('div', 'tech-grid');
+    group.itens.forEach(item => row.append(techChip(item)));
+    block.append(row);
+    target.append(block);
+  });
 }
 function renderTimeline() {
   const target = document.querySelector('#timeline');

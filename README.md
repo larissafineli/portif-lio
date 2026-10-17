@@ -35,10 +35,11 @@ A troca PT/EN traduz todos os textos da interface e dos dados. A seção ativa �
 | Apresentação | CSS3 | Grade modular responsiva e identidade visual. |
 | Comportamento | JavaScript com módulos nativos | Leitura dos JSONs, idioma e destaque da seção ativa. |
 | Conteúdo | JSON | Perfil, experiências e projetos. |
+| Tipografia | Google Fonts | Instrument Serif nos títulos e Plus Jakarta Sans no texto. |
 | Ícones | SVG local | Ícones e marca sem dependências externas. |
 | Hospedagem | GitHub Pages | Publicação dos arquivos estáticos. |
 
-**Bibliotecas de terceiros:** nenhuma. Não há `npm install`, compilação, banco de dados ou chave secreta.
+**Bibliotecas de terceiros:** nenhuma além das fontes do Google Fonts. Não há `npm install`, compilação, banco de dados ou chave secreta.
 
 **Para executar localmente:** navegador atualizado e Python 3 para servir os arquivos por HTTP.
 

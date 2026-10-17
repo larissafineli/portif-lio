@@ -33,7 +33,7 @@
     "focusValue": "Desenvolvimento web e back-end",
     "aboutEyebrow": "01 / SOBRE MIM",
     "aboutTitle": "Curiosidade e prática no dia a dia.",
-    "aboutBody": "Uso cada trabalho da faculdade para praticar estrutura de páginas, estilos, lógica de programação e versionamento com Git.",
+    "aboutBody": "Pratico HTML, CSS, JavaScript, Java e Git nos trabalhos da faculdade.",
     "skillsTitle": "Ferramentas que uso",
     "skillsNote": "Tecnologias que aparecem nos meus estudos e projetos.",
     "educationTitle": "Minha formação",
@@ -76,7 +76,7 @@
     "heroName1": "Larissa",
     "heroName2": "Fineli",
     "aboutLabel": "SOBRE",
-    "aboutLead": "Estudante de Engenharia de Software construindo projetos web e de back-end ao longo do curso.",
+    "aboutLead": "Estudante de Engenharia de Software na PUC Minas, construindo projetos web e de back-end.",
     "eduLabel": "FORMAÇÃO",
     "eduTitle": "Engenharia de Software",
     "eduSchool": "PUC Minas",
@@ -85,11 +85,11 @@
     "expTitle": "Formação e",
     "expNote": "Formação acadêmica e projetos desenvolvidos nas disciplinas.",
     "stackLabel": "STACK",
-    "stackTitle": "Ferramentas que uso",
+    "stackTitle": "Stack",
     "projectLabel": "PROJETO",
     "projectTitle": "Publicado no GitHub.",
     "contactLabel": "CONTATO",
-    "contactBody": "Estou aberta a oportunidades de estágio e a trocar ideias sobre desenvolvimento.",
+    "contactBody": "Busco meu primeiro estágio em desenvolvimento. Se tiver uma oportunidade ou quiser trocar ideia sobre um projeto, me chama.",
     "contactEmail": "E-mail",
     "contactLinkedin": "LinkedIn",
     "contactGithub": "GitHub",
@@ -113,13 +113,14 @@
     "expSub": "Formação acadêmica e projetos desenvolvidos nas disciplinas do curso.",
     "contatoKicker": "CONTATO",
     "contatoTitle": "Contato",
-    "contatoSub": "Estou aberta a oportunidades de estágio. Escolha o canal que preferir.",
+    "contatoSub": "Busco meu primeiro estágio em desenvolvimento. Se tiver uma oportunidade ou quiser trocar ideia sobre um projeto, me chama.",
     "techNote": "Ferramentas que aparecem nos meus estudos e projetos.",
     "ctaProjects": "Ver meus projetos",
     "backHome": "Voltar ao início",
     "kindFormacao": "Formação",
     "kindProjeto": "Projetos",
-    "featuredLabel": "DESTAQUE"
+    "featuredLabel": "DESTAQUE",
+    "brandName": "Larissa Fineli"
   },
   "en": {
     "navAbout": "About",
@@ -143,7 +144,7 @@
     "focusValue": "Web and back-end development",
     "aboutEyebrow": "01 / ABOUT",
     "aboutTitle": "Curiosity and practice, every day.",
-    "aboutBody": "I use every coursework assignment to practise page structure, styling, programming logic and version control with Git.",
+    "aboutBody": "I practise HTML, CSS, JavaScript, Java and Git in coursework.",
     "skillsTitle": "Tools I work with",
     "skillsNote": "Technologies that appear in my studies and projects.",
     "educationTitle": "Education",
@@ -186,7 +187,7 @@
     "heroName1": "Larissa",
     "heroName2": "Fineli",
     "aboutLabel": "ABOUT",
-    "aboutLead": "Software Engineering student building web and back-end projects throughout my degree.",
+    "aboutLead": "Software Engineering student at PUC Minas, building web and back-end projects.",
     "eduLabel": "EDUCATION",
     "eduTitle": "Software Engineering",
     "eduSchool": "PUC Minas",
@@ -195,11 +196,11 @@
     "expTitle": "Education and",
     "expNote": "Academic background and projects developed in coursework.",
     "stackLabel": "STACK",
-    "stackTitle": "Tools I reach for",
+    "stackTitle": "Stack",
     "projectLabel": "PROJECT",
     "projectTitle": "Published on GitHub.",
     "contactLabel": "CONTACT",
-    "contactBody": "I am open to internship opportunities and to talking about development.",
+    "contactBody": "I'm looking for my first development internship. If you have an opportunity or want to talk about a project, reach out.",
     "contactEmail": "Email",
     "contactLinkedin": "LinkedIn",
     "contactGithub": "GitHub",
@@ -223,13 +224,37 @@
     "expSub": "Academic background and projects developed in coursework.",
     "contatoKicker": "CONTACT",
     "contatoTitle": "Contact",
-    "contatoSub": "I am open to internship opportunities. Pick whichever channel you prefer.",
+    "contatoSub": "I'm looking for my first development internship. If you have an opportunity or want to talk about a project, reach out.",
     "techNote": "Tools that appear in my studies and projects.",
     "ctaProjects": "See my projects",
     "backHome": "Back to home",
     "kindFormacao": "Education",
     "kindProjeto": "Projects",
-    "featuredLabel": "FEATURED"
+    "featuredLabel": "FEATURED",
+    "brandName": "Larissa Fineli"
   },
-  "linkedin": "https://www.linkedin.com/in/larissa-fineli-a8b413419/"
+  "linkedin": "https://www.linkedin.com/in/larissa-fineli-a8b413419/",
+  "stackGrupos": [
+    {
+      "label": "Front-end",
+      "itens": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ]
+    },
+    {
+      "label": "Back-end",
+      "itens": [
+        "Java"
+      ]
+    },
+    {
+      "label": "Ferramentas",
+      "itens": [
+        "Git",
+        "GitHub"
+      ]
+    }
+  ]
 }

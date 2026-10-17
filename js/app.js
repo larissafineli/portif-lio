@@ -61,9 +61,9 @@ function renderTimeline() {
     const when = node('span', 'when', item.periodo);
     const kind = node('span', 'kind', isEducation
       ? profile[language].kindFormacao : profile[language].kindProjeto);
-    const heading = node('h3', '', item.instituicao || item[language].cargo);
+    const heading = node('h3', '', isEducation ? item[language].cargo : item[language].cargo);
     const org = node('span', 'org', isEducation
-      ? `${item[language].cargo}${item.local ? ` · ${item.local}` : ''}`
+      ? `${item.instituicao}${item.local ? ` · ${item.local}` : ''}`
       : item.instituicao);
     if (isEducation) {
       const mark = node('span', 'row-icon');

@@ -32,7 +32,8 @@ h1,h2,h3,p { margin:0 }
 .skip { position:fixed; top:-100px; left:16px; background:var(--surface); padding:10px 18px; z-index:50 }
 .skip:focus { top:12px }
 
-.shell { max-width:var(--max); margin:0 auto; padding:0 20px 28px }
+.shell { max-width:var(--max); margin:0 auto; padding:0 20px 28px; min-height:100vh; display:flex; flex-direction:column }
+.shell > main { flex:1 }
 
 /* Barra superior */
 .topbar {
@@ -56,7 +57,8 @@ h1,h2,h3,p { margin:0 }
   font-size:13px; text-decoration:none; color:var(--muted);
 }
 .navpill a:hover { color:var(--rose) }
-.navpill a[aria-current="true"] { background:var(--rose); color:#fff }
+.navpill a[aria-current="true"],
+.navpill a[aria-current="page"] { background:var(--rose); color:#fff }
 .topbar-right { display:flex; align-items:center; gap:10px }
 .lang { display:flex; gap:2px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:3px }
 .lang button {
@@ -83,8 +85,9 @@ h1,h2,h3,p { margin:0 }
 .hero .kicker::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--rose) }
 .hero h1 {
   font-family:var(--serif); font-weight:400;
-  font-size:clamp(52px,10vw,116px); line-height:.92;
-  letter-spacing:-.045em;
+  font-size:clamp(34px,6.6vw,80px); line-height:1;
+  letter-spacing:-.04em;
+  white-space:nowrap;
 }
 .hero h1 em { font-style:italic; color:var(--rose) }
 
@@ -310,7 +313,9 @@ h1,h2,h3,p { margin:0 }
 .tile--project .media-icon { min-height:230px }
 
 /* Contato em página própria */
-.tile--contactpage { grid-column:span 7 }
+.tile--contactpage { grid-column:span 12 }
+.tile--contactpage .contact-list { grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 28px }
+.tile--contactpage .contact-list a { border-top:1px solid var(--line) }
 .tile--contactpage .contact-list a { color:var(--ink); border-top:1px solid var(--line) }
 .tile--contactpage .contact-list a:hover { color:var(--rose) }
 .tile--contactpage .contact-list .icon { color:var(--rose) }

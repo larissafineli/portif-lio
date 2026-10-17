@@ -147,7 +147,11 @@ h1,h2,h3,p { margin:0 }
 }
 
 .tile--project { grid-column:span 12; padding:0; overflow:hidden; display:grid; grid-template-columns:1fr 1fr }
-.project-media { display:block; background:var(--blush-soft); grid-column:1 }
+.project-media {
+  display:flex; align-items:center; justify-content:center;
+  background:var(--blush); grid-column:1; padding:16px;
+}
+.project-media img { border-radius:14px }
 .project-media img { width:100%; height:100%; min-height:260px; max-height:340px; object-fit:cover }
 .project-body { padding:22px 24px 24px; display:flex; flex-direction:column; gap:10px; flex:1 }
 .project-body h3 { font-family:var(--serif); font-weight:400; font-size:27px; letter-spacing:-.02em }
@@ -239,7 +243,7 @@ h1,h2,h3,p { margin:0 }
 /* Card de projeto em página própria */
 .tile--wide { grid-column:span 12; padding:0; overflow:hidden; display:grid; grid-template-columns:1fr 1fr }
 .tile--wide .project-media { grid-column:1 }
-.tile--wide .project-media img { width:100%; height:100%; min-height:280px; max-height:360px; object-fit:cover }
+.tile--wide .project-media img { width:100%; height:100%; min-height:250px; max-height:330px; object-fit:cover }
 .tile--wide .project-body { padding:26px 28px }
 .tile--wide .tech-grid { grid-template-columns:repeat(auto-fill,minmax(110px,1fr)) }
 
@@ -269,6 +273,39 @@ h1,h2,h3,p { margin:0 }
 }
 .timeline-row .detail { grid-column:2/-1; font-size:13px; color:var(--muted); line-height:1.7; margin-top:2px }
 
+/* Formação em destaque dentro de Experiências */
+.timeline-row.is-education {
+  grid-template-columns:44px 150px 1fr auto;
+  align-items:start;
+  background:var(--blush-soft);
+  border:1px solid #efc9d6;
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:10px;
+}
+.timeline-row.is-education .row-icon {
+  grid-column:1; grid-row:1;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:11px;
+  background:var(--rose); color:#fff;
+}
+.timeline-row.is-education .row-icon .icon { width:19px; height:19px }
+.timeline-row.is-education .when { grid-column:2 }
+.timeline-row.is-education h3 { grid-column:3; font-size:18px }
+.timeline-row.is-education .org { grid-column:3; font-size:13px }
+.timeline-row.is-education .kind { grid-column:4 }
+
+/* Selo sobre a imagem do projeto */
+.project-media { position:relative }
+.media-badge {
+  position:absolute; left:14px; bottom:14px; z-index:2;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:14px;
+  background:var(--rose); color:#fff;
+  box-shadow:0 4px 12px #3b253026;
+}
+.media-badge .icon { width:22px; height:22px }
+
 /* Contato em página própria */
 .tile--contactpage { grid-column:span 7 }
 .tile--contactpage .contact-list a { color:var(--ink); border-top:1px solid var(--line) }
@@ -279,6 +316,12 @@ h1,h2,h3,p { margin:0 }
 .tile--aside p { font-size:13px; color:var(--muted); line-height:1.75 }
 
 @media (max-width:980px) {
+  .timeline-row.is-education { grid-template-columns:44px 1fr }
+  .timeline-row.is-education .when,
+  .timeline-row.is-education h3,
+  .timeline-row.is-education .org,
+  .timeline-row.is-education .kind { grid-column:2 }
+  .timeline-row.is-education .kind { grid-row:auto; justify-self:start; margin-top:6px }
   .tile--wide { grid-template-columns:1fr }
   .tile--wide .project-media img { max-height:240px }
   .tile--contactpage,.tile--aside { grid-column:span 12 }
@@ -287,6 +330,12 @@ h1,h2,h3,p { margin:0 }
   .timeline-row .detail { grid-column:2 }
 }
 @media (max-width:720px) {
+  .timeline-row.is-education { grid-template-columns:1fr; padding:16px }
+  .timeline-row.is-education .row-icon { margin-bottom:6px }
+  .timeline-row.is-education .when,
+  .timeline-row.is-education h3,
+  .timeline-row.is-education .org,
+  .timeline-row.is-education .kind { grid-column:1 }
   .timeline-row { grid-template-columns:1fr; gap:3px }
   .timeline-row h3,.timeline-row .org,.timeline-row .kind,.timeline-row .detail { grid-column:1; grid-row:auto }
   .timeline-row .kind { justify-self:start; margin:6px 0 2px }

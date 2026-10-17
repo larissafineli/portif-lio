@@ -56,14 +56,21 @@ function renderTimeline() {
   if (!target || !experiences) return;
   target.replaceChildren();
   experiences.experiencias.forEach(item => {
-    const row = node('div', 'timeline-row');
+    const isEducation = item.tipo === 'formacao';
+    const row = node('div', isEducation ? 'timeline-row is-education' : 'timeline-row');
     const when = node('span', 'when', item.periodo);
-    const kind = node('span', 'kind', item.tipo === 'formacao'
+    const kind = node('span', 'kind', isEducation
       ? profile[language].kindFormacao : profile[language].kindProjeto);
-    const heading = node('h3', '', item[language].cargo);
-    const org = node('span', 'org', item.instituicao);
+    const heading = node('h3', '', item.instituicao || item[language].cargo);
+    const org = node('span', 'org', isEducation
+      ? `${item[language].cargo}${item.local ? ` · ${item.local}` : ''}`
+      : item.instituicao);
+    if (isEducation) {
+      const mark = node('span', 'row-icon');
+      mark.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>';
+      row.append(mark);
+    }
     row.append(when, heading, org, kind);
-    if (item[language].detalhe) row.append(node('p', 'detail', item[language].detalhe));
     target.append(row);
   });
 }

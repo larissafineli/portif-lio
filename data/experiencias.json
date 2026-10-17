@@ -1,0 +1,34 @@
+{
+  "experiencias": [
+    {
+      "tipo": "formacao",
+      "instituicao": "PUC Minas",
+      "periodo": "Em andamento",
+      "inicio": "2026",
+      "pt": {
+        "cargo": "Engenharia de Software",
+        "periodo": "Em andamento"
+      },
+      "en": {
+        "cargo": "Software Engineering",
+        "periodo": "In progress"
+      },
+      "local": "Belo Horizonte, MG"
+    },
+    {
+      "tipo": "projetos",
+      "instituicao": "Disciplinas do curso",
+      "periodo": "2026 · projetos",
+      "inicio": "2026",
+      "pt": {
+        "cargo": "Projetos acadêmicos",
+        "periodo": "2026"
+      },
+      "en": {
+        "cargo": "Coursework projects",
+        "periodo": "2026",
+        "instituicao": "University coursework"
+      }
+    }
+  ]
+}

@@ -149,7 +149,7 @@ h1,h2,h3,p { margin:0 }
 .tile--project { grid-column:span 12; padding:0; overflow:hidden; display:grid; grid-template-columns:1fr 1fr }
 .project-media {
   display:flex; align-items:center; justify-content:center;
-  background:var(--blush); grid-column:1; padding:16px;
+  background:var(--blush); grid-column:1; padding:14px;
 }
 .project-media img { border-radius:14px }
 .project-media img { width:100%; height:100%; min-height:260px; max-height:340px; object-fit:cover }
@@ -295,16 +295,19 @@ h1,h2,h3,p { margin:0 }
 .timeline-row.is-education .org { grid-column:3; font-size:13px }
 .timeline-row.is-education .kind { grid-column:4 }
 
-/* Selo sobre a imagem do projeto */
-.project-media { position:relative }
-.media-badge {
-  position:absolute; left:14px; bottom:14px; z-index:2;
-  display:inline-flex; align-items:center; justify-content:center;
-  width:44px; height:44px; border-radius:14px;
+/* Painel do projeto: ícone no lugar da captura */
+.project-media { position:relative; text-decoration:none }
+.media-icon {
+  display:flex; align-items:center; justify-content:center;
+  width:100%; min-height:250px; height:100%;
   background:var(--rose); color:#fff;
-  box-shadow:0 4px 12px #3b253026;
+  border-radius:14px;
 }
-.media-badge .icon { width:22px; height:22px }
+.media-icon .icon {
+  width:84px; height:84px; stroke-width:1.1;
+  opacity:.95;
+}
+.tile--project .media-icon { min-height:230px }
 
 /* Contato em página própria */
 .tile--contactpage { grid-column:span 7 }

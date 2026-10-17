@@ -78,11 +78,7 @@ function renderProject() {
   const project = projects[0];
   if (!project) return;
   const detail = project[language];
-  const image = document.querySelector('#project-image') || document.querySelector('#featured-image');
-  if (image) {
-    image.src = new URL(project.imagem, root).href;
-    image.alt = detail.alt;
-  }
+  // O card usa um ícone no lugar da captura; nada a carregar aqui.
   const media = document.querySelector('#project-media');
   if (media) media.href = project.repositorio;
   const title = document.querySelector('#project-title') || document.querySelector('#featured-title');

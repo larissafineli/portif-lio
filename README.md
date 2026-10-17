@@ -11,7 +11,7 @@ Site com quatro páginas em estilo bento grid, com identidade visual em bege e r
 - Quatro páginas com menu de navegação: Sobre, Experiências, Projetos e Contato.
 - Conteúdo em arquivos JSON, separado da apresentação.
 - Formação acadêmica apresentada dentro de Experiências, em tabela cronológica.
-- Ícones SVG locais para tecnologias, seções e contatos.
+- Ícones SVG locais para tecnologias, seções, contatos e para o card do projeto.
 - Conferido visualmente em 1440, 980, 768, 390 e 360 px, sem rolagem horizontal e sem erro de JavaScript.
 - **Pendente para a entrega:** publicar no GitHub Pages e completar os dados marcados como "a informar".
 - O formulário de contato não foi implementado; o contato acontece por e-mail, LinkedIn e GitHub.
@@ -22,7 +22,7 @@ Site com quatro páginas em estilo bento grid, com identidade visual em bege e r
 |---|---|
 | Sobre | Apresentação, stack com ícones das tecnologias e projeto em destaque. |
 | Experiências | Formação acadêmica e projetos de disciplina em tabela cronológica. |
-| Projetos | Receitas de Minas, com imagem, tecnologias e link do repositório. |
+| Projetos | Receitas de Minas, com ícone, tecnologias e link do repositório. |
 | Contato | E-mail, LinkedIn e GitHub, com ícones. |
 
 A troca PT/EN traduz todos os textos da interface e dos dados. A seção ativa é destacada no menu durante a rolagem.
@@ -62,8 +62,7 @@ portif-lio/
 │   └── projetos.json          # Projetos publicados
 ├── assets/
 │   ├── favicon.svg
-│   ├── tech/                  # Ícones SVG das tecnologias
-│   └── projects/              # Imagem do projeto
+│   └── tech/                  # Ícones SVG das tecnologias
 ├── .nojekyll
 └── README.md
 ```

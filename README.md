@@ -26,7 +26,7 @@ O idioma é escolhido nos botões PT/EN, preservado entre as páginas e registra
 | Comportamento | JavaScript com módulos nativos e leitura dos JSONs. |
 | Conteúdo | JSON para perfil, stack, projetos, experiências e traduções. |
 | Tipografia | Manrope variável, hospedada localmente, com licença OFL. |
-| Ícones | Sprite SVG compartilhado e arquivos locais das tecnologias. |
+| Ícones | Sprite SVG, logos da stack na paleta e ilustrações 3D locais em WebP. |
 | Hospedagem | Arquivos estáticos compatíveis com GitHub Pages. |
 
 Não há Bootstrap, framework JavaScript, etapa de build, banco de dados ou chave secreta. Fontes e ícones não dependem de CDN.
@@ -61,6 +61,7 @@ portif-lio/
 │   ├── favicon.svg
 │   ├── icons.svg              # Ícones de interface compartilhados
 │   ├── fonts/                 # Manrope e licença OFL
+│   ├── 3d/                    # Ilustrações 3D rosas e licença CC0
 │   └── tech/                  # Ícones de tecnologia e créditos
 ├── .nojekyll
 └── README.md
@@ -80,11 +81,16 @@ Os documentos HTML têm conteúdo inicial para evitar uma tela vazia durante o c
 
 - Composição aberta, com divisórias em vez de cartões repetidos.
 - Manrope para títulos e textos, sem mistura de famílias tipográficas.
-- Rosa reservado a ações, navegação ativa e destaque do projeto.
+- Escala única definida em `:root`: títulos de 48px (36px no celular), subtítulos de 24px, textos e ações de 16px e detalhes de 13px. Sem tamanhos individuais por card.
+- Pesos compartilhados: 400 para leitura, 600 para interface e 700 para títulos.
+- Todos os logos da stack no mesmo rosa, com fundos arredondados em rosa-claro. Nenhuma tecnologia recebe uma cor de destaque isolada.
+- Ícones 3D rosas maiores: computador no Sobre, cubo abaixo de Stack, pasta em Projetos, caderno em Experiências e envelope em Contato. São imagens locais leves, sem biblioteca 3D em execução.
+- Contato com título e introdução curta aos canais, sem mensagem de disponibilidade ou convite para estágio. Canais distribuídos em três colunas no desktop e empilhados no celular.
+- Rosa nas ações, na navegação ativa e no destaque do projeto.
 - Foco visível, link para pular ao conteúdo e botões de idioma com estado acessível.
 - Tecnologias agrupadas por proximidade, sem aparência de botões clicáveis.
 - Rótulos e nomes acessíveis em links que usam somente ícones.
-- Textos a partir de 12px, rodapé de 13px e alvos principais de pelo menos 44px.
+- Textos a partir de 13px, rodapé com o mesmo corpo de leitura (16px) e alvos principais de pelo menos 44px.
 - Animações de interação desativadas quando o navegador solicita movimento reduzido.
 
 A revisão local incluiu as quatro rotas em 1440, 980, 800, 768, 760, 520, 390 e 360px, troca real de idioma e navegação. Não foi adicionada suíte de testes ou dependência de desenvolvimento ao projeto.

@@ -22,7 +22,8 @@ const techIcons = {
 let language = readLanguage();
 let profile;
 let experiences;
-let projects = [];
+let projects = null;
+let contentError = false;
 
 function node(tag, className, text) {
   const element = document.createElement(tag);
@@ -68,9 +69,11 @@ function renderTechnologies(items) {
       const image = node('img', 'tech-icon');
       image.src = new URL(`assets/tech/${asset}.svg`, root).href;
       image.alt = '';
-      image.width = 20;
-      image.height = 20;
-      item.append(image);
+      image.width = 26;
+      image.height = 26;
+      const mark = node('span', `tech-mark tech-mark--${asset}`);
+      mark.append(image);
+      item.append(mark);
     }
     item.append(node('span', '', label));
     list.append(item);
@@ -95,6 +98,10 @@ function renderStack() {
 function renderTimeline() {
   const target = document.querySelector('#timeline');
   if (!target || !experiences) return;
+  if (!experiences.experiencias.length) {
+    target.replaceChildren(node('p', 'content-status', profile[language].noExperiences));
+    return;
+  }
   const rows = experiences.experiencias.map(item => {
     const detail = item[language];
     const isEducation = item.tipo === 'formacao';
@@ -116,11 +123,15 @@ function renderTimeline() {
 }
 
 function renderProject() {
-  if (page !== 'projects' && page !== 'about') return;
+  if ((page !== 'projects' && page !== 'about') || !projects) return;
   const project = projects[0];
   if (!project) {
     const card = document.querySelector('#project-card') || document.querySelector('.featured-project');
-    if (card) card.replaceChildren(node('p', 'content-status', profile[language].noProjects));
+    if (card) {
+      const heading = node('h2', 'section-heading', profile[language].noProjects);
+      heading.id = page === 'projects' ? 'project-title' : 'featured-title';
+      card.replaceChildren(heading);
+    }
     return;
   }
   const title = document.querySelector('#project-title') || document.querySelector('#featured-title');
@@ -185,6 +196,7 @@ function renderLanguage() {
   renderTimeline();
   renderProject();
   renderContacts();
+  if (contentError) document.querySelector('#content-status').textContent = text.loadError;
 }
 
 function changeLanguage(nextLanguage) {
@@ -199,6 +211,7 @@ function changeLanguage(nextLanguage) {
 }
 
 function showError(error) {
+  contentError = true;
   console.error(error);
   const status = document.querySelector('#content-status');
   if (!status) return;
@@ -211,12 +224,13 @@ function showError(error) {
 async function init() {
   document.querySelector('#content-status').hidden = false;
   profile = await loadJSON('perfil.json');
-  if (page === 'projects' || page === 'about') projects = await loadJSON('projetos.json');
-  if (page === 'experience') experiences = await loadJSON('experiencias.json');
-  renderLanguage();
   document.querySelectorAll('[data-language]').forEach(button => {
     button.addEventListener('click', () => changeLanguage(button.dataset.language));
   });
+  renderLanguage();
+  if (page === 'projects' || page === 'about') projects = await loadJSON('projetos.json');
+  if (page === 'experience') experiences = await loadJSON('experiencias.json');
+  renderLanguage();
   document.querySelector('#content-status').hidden = true;
 }
 

@@ -1,14 +1,14 @@
-/* Base clara inspirada no azul-petróleo e bege do perfil GitHub. */
+/* Base clara em bege e rosa. */
 :root {
-  --paper:#f5f1e9;
-  --surface:#fffdf8;
-  --ink:#233c3b;
-  --muted:#5a6b67;
-  --teal:#245c59;
-  --teal-dark:#173f3d;
+  --paper:#fdf7f5;
+  --surface:#fffdfc;
+  --ink:#3b2530;
+  --muted:#6f5560;
+  --rose:#a83e63;
+  --rose-dark:#862f4f;
   --sand:#d9b38c;
-  --line:#d6dcd2;
-  --pale:#e4eae1;
+  --line:#ecd7dd;
+  --pale:#f7e4ea;
   --serif:Georgia,'Times New Roman',serif;
   --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --max:1160px
@@ -68,13 +68,13 @@ svg.sprite {
 }
 
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible {
-  outline:3px solid var(--teal);
+  outline:3px solid var(--rose);
   outline-offset:5px
 }
 
 ::selection {
   background:var(--sand);
-  color:var(--teal-dark)
+  color:var(--rose-dark)
 }
 
 [hidden] {
@@ -125,7 +125,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
   place-items:center;
   width:43px;
   height:43px;
-  background:var(--teal);
+  background:var(--rose);
   border-radius:50%;
   color:var(--surface);
   font:20px var(--serif)
@@ -162,8 +162,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
 }
 
 .nav a:hover,.nav a[aria-current=page] {
-  color:var(--teal);
-  border-bottom-color:var(--teal)
+  color:var(--rose);
+  border-bottom-color:var(--rose)
 }
 
 .language {
@@ -186,7 +186,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
 
 .language button[aria-pressed=true] {
   font-weight:750;
-  color:var(--teal);
+  color:var(--rose);
   text-decoration:underline;
   text-underline-offset:6px
 }
@@ -198,7 +198,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
   min-height:44px;
   min-width:44px;
   border-radius:6px;
-  color:var(--teal)
+  color:var(--rose)
 }
 
 .menu-button .icon {
@@ -207,7 +207,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
 
 .eyebrow {
   margin:0 0 20px;
-  color:var(--teal);
+  color:var(--rose);
   font-size:12px;
   font-weight:700;
   letter-spacing:.16em;
@@ -241,7 +241,7 @@ h1 {
 
 h1 em {
   font-style:normal;
-  color:var(--teal)
+  color:var(--rose)
 }
 
 .lead {
@@ -265,10 +265,10 @@ h1 em {
   align-items:center;
   gap:14px;
   min-height:48px;
-  border:1px solid var(--teal);
+  border:1px solid var(--rose);
   padding:12px 21px;
   border-radius:5px;
-  background:var(--teal);
+  background:var(--rose);
   color:var(--surface);
   text-decoration:none;
   font-size:13px;
@@ -277,7 +277,7 @@ h1 em {
 }
 
 .button:hover {
-  background:var(--teal-dark);
+  background:var(--rose-dark);
   transform:translateY(-1px)
 }
 
@@ -287,14 +287,14 @@ h1 em {
   gap:9px;
   font-size:13px;
   font-weight:550;
-  color:var(--teal)
+  color:var(--rose)
 }
 
 .profile-note {
   position:relative;
-  background:var(--teal);
+  background:var(--rose);
   padding:40px 35px 30px;
-  color:#f3f0e7;
+  color:#fff7fa;
   border-radius:100px 8px 8px 8px;
   overflow:hidden;
   min-height:340px
@@ -305,7 +305,7 @@ h1 em {
   position:absolute;
   width:180px;
   height:180px;
-  border:1px solid #6e9590;
+  border:1px solid #d29ab1;
   border-radius:50%;
   right:-78px;
   top:-68px
@@ -328,22 +328,22 @@ h1 em {
 
 .profile-note p {
   font-size:13px;
-  color:#dbe4dc;
+  color:#f7e4ea;
   line-height:1.8;
   margin-bottom:20px
 }
 
 .note-foot {
   padding-top:18px;
-  border-top:1px solid #527b75;
+  border-top:1px solid #c07a96;
   font-size:12px;
   line-height:1.6;
-  color:#e3ece5
+  color:#fbeef2
 }
 
 .note-foot strong {
   display:block;
-  color:var(--sand);
+  color:#f7e0cc;
   font-size:12px;
   letter-spacing:.13em;
   margin-bottom:5px
@@ -390,9 +390,9 @@ h2 {
 .skill {
   font-size:12px;
   padding:6px 13px;
-  border:1px solid #c7d1c7;
+  border:1px solid #e8ced8;
   border-radius:4px;
-  color:var(--teal);
+  color:var(--rose);
   background:transparent
 }
 
@@ -448,7 +448,7 @@ h2 {
 .featured-image {
   border-radius:5px;
   border:1px solid var(--line);
-  box-shadow:0 8px 24px #173f3d0b
+  box-shadow:0 8px 24px #a83e630b
 }
 
 .page-heading {
@@ -488,14 +488,14 @@ h2 {
   padding:8px 18px;
   background:transparent;
   border:1px solid var(--line);
-  color:var(--teal);
+  color:var(--rose);
   border-radius:30px
 }
 
 .filter[aria-pressed=true],.filter:hover {
   color:var(--surface);
-  background:var(--teal);
-  border-color:var(--teal)
+  background:var(--rose);
+  border-color:var(--rose)
 }
 
 .project-count {
@@ -519,7 +519,7 @@ h2 {
 .project-date {
   padding-top:4px;
   font-size:12px;
-  color:var(--teal);
+  color:var(--rose);
   line-height:1.6
 }
 
@@ -528,7 +528,7 @@ h2 {
   display:block;
   width:9px;
   height:9px;
-  border:1px solid var(--teal);
+  border:1px solid var(--rose);
   border-radius:50%;
   margin-bottom:13px;
   background:var(--paper);
@@ -563,7 +563,7 @@ h2 {
 }
 
 .image-link:hover {
-  border-color:var(--teal)
+  border-color:var(--rose)
 }
 
 .project img {
@@ -633,7 +633,7 @@ h2 {
 .experience-meta strong {
   display:block;
   font-size:15px;
-  color:var(--teal);
+  color:var(--rose);
   margin-bottom:7px
 }
 
@@ -716,13 +716,13 @@ h2 {
 }
 
 .social-link:hover {
-  color:var(--teal)
+  color:var(--rose)
 }
 
 .social-icon {
   display:grid;
   place-items:center;
-  background:var(--teal);
+  background:var(--rose);
   color:var(--surface);
   width:40px;
   height:40px;
@@ -769,7 +769,7 @@ h2 {
 }
 
 .form-field input,.form-field textarea {
-  border:1px solid #cbd3c9;
+  border:1px solid #e8ced8;
   background:var(--surface);
   color:var(--ink);
   padding:12px 13px;
@@ -789,7 +789,7 @@ h2 {
 }
 
 .form-field ::placeholder {
-  color:#73817b
+  color:#9d7c88
 }
 
 .form-notice {
@@ -812,7 +812,7 @@ h2 {
 }
 
 .form-direct a {
-  color:var(--teal)
+  color:var(--rose)
 }
 
 .honey {
@@ -871,10 +871,10 @@ h2 {
 }
 
 .noscript {
-  background:#fff4db;
+  background:#fbe8ee;
   padding:16px;
   text-align:center;
-  color:#513d16;
+  color:#5c2338;
   font-size:13px
 }
 
@@ -894,7 +894,7 @@ h2 {
   min-height:44px;
   border-top:1px solid var(--line);
   background:var(--surface);
-  color:var(--teal);
+  color:var(--rose);
   font-size:12px;
   font-weight:600;
 }

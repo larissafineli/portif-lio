@@ -2,7 +2,7 @@
 
 Portfólio profissional desenvolvido para o **Laboratório 01 de Desenvolvimento e Integração de Aplicações Web**, do curso de Engenharia de Software da PUC Minas.
 
-O site apresenta minha trajetória, meus projetos publicados e meus canais de contato, com conteúdo em português e inglês.
+O site apresenta minha trajetória, meus projetos publicados e meus canais de contato, com conteúdo em português e inglês. A identidade visual usa bege e rosa.
 
 **[Acessar o portfólio](https://larissafineli.github.io/portif-lio/)** (endereço previsto para o GitHub Pages)
 
@@ -38,7 +38,7 @@ O conteúdo fica em arquivos JSON, então dá para atualizar textos e projetos s
 | Sobre mim | Apresentação, formação e tecnologias. |
 | Projetos | Linha do tempo gerada a partir do JSON, com tecnologias, imagem e link do repositório. |
 | Experiências | Formação acadêmica e atividades. |
-| Contato | E-mail institucional e GitHub. |
+| Contato | E-mail, LinkedIn e GitHub. |
 
 A troca PT/EN traduz a interface e os dados.
 
@@ -121,7 +121,7 @@ Não existe etapa de build. O arquivo `.nojekyll` indica que o conteúdo deve se
 
 **Larissa Fineli** · Engenharia de Software, PUC Minas.
 
-[GitHub](https://github.com/larissafineli) · [E-mail institucional](mailto:larissa.fineli@sga.pucminas.br)
+[GitHub](https://github.com/larissafineli) · [LinkedIn](https://www.linkedin.com/in/larissa-fineli-a8b413419/) · [E-mail](mailto:larissa4321ramos@gmail.com)
 
 ## Agradecimentos
 

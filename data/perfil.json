@@ -2,7 +2,7 @@
   "nome": "Larissa Fineli",
   "nomeCompleto": "Larissa Fineli",
   "local": "Belo Horizonte, MG",
-  "email": "larissa.fineli@sga.pucminas.br",
+  "email": "larissa4321ramos@gmail.com",
   "github": "https://github.com/larissafineli",
   "tecnologias": [
     "HTML5",
@@ -60,7 +60,7 @@
     "noDate": "Período a informar",
     "contactEyebrow": "04 / CONTATO",
     "contactTitle": "Vamos conversar?",
-    "contactIntro": "Você pode falar comigo pelo e-mail institucional ou acompanhar meus projetos no GitHub.",
+    "contactIntro": "Você pode falar comigo por e-mail, LinkedIn ou acompanhar meus projetos no GitHub.",
     "emailLink": "Me envie um e-mail",
     "githubLink": "Explorar meu GitHub",
     "footer": "Feito por Larissa Fineli.",
@@ -70,7 +70,8 @@
     "aboutTitleDocument": "Sobre mim",
     "projectsTitleDocument": "Projetos",
     "experienceTitleDocument": "Experiências",
-    "contactTitleDocument": "Contato"
+    "contactTitleDocument": "Contato",
+    "linkedinLink": "Conectar no LinkedIn"
   },
   "en": {
     "navAbout": "About",
@@ -121,7 +122,7 @@
     "noDate": "Period to be informed",
     "contactEyebrow": "04 / CONTACT",
     "contactTitle": "Let's talk.",
-    "contactIntro": "You can reach me by institutional email or follow my projects on GitHub.",
+    "contactIntro": "You can reach me by email, on LinkedIn or follow my projects on GitHub.",
     "emailLink": "Send me an email",
     "githubLink": "Explore my GitHub",
     "footer": "Made by Larissa Fineli.",
@@ -131,6 +132,8 @@
     "aboutTitleDocument": "About",
     "projectsTitleDocument": "Projects",
     "experienceTitleDocument": "Experience",
-    "contactTitleDocument": "Contact"
-  }
+    "contactTitleDocument": "Contact",
+    "linkedinLink": "Connect on LinkedIn"
+  },
+  "linkedin": "https://www.linkedin.com/in/larissa-fineli-a8b413419/"
 }

@@ -6,7 +6,8 @@ import Icon, { asset } from '../components/Icon.jsx';
 
 export default function Contact() {
   const { t, perfil } = useLanguage();
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error | missing
+  const [status, setStatus] = useState('idle');
+  const [draft, setDraft] = useState(null); // idle | sending | success | error | missing
   const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: 'onTouched' });
 
   const github = `@${new URL(perfil.github).pathname.split('/').filter(Boolean).pop()}`;
@@ -19,6 +20,7 @@ export default function Contact() {
   ];
 
   async function onSubmit(data) {
+    setDraft(data);
     setStatus('sending');
     try {
       const res = await fetch(`https://formsubmit.co/ajax/${perfil.email}`, {
@@ -112,6 +114,13 @@ export default function Contact() {
             <span>{status === 'sending' ? t.formSending : t.formSend}</span><Icon name="arrow" />
           </button>
           {msg && <p className={`form-status is-${status}`} role="status">{msg}</p>}
+          {status === 'error' && draft && (
+            <a className="text-link" href={`mailto:${perfil.email}?subject=${encodeURIComponent(`Contato do portfólio: ${draft.nome}`)}&body=${encodeURIComponent(`${draft.mensagem}
+
+${draft.nome} (${draft.email})`)}`}>
+              <Icon name="mail" /><span>{t.formMailto}</span>
+            </a>
+          )}
         </div>
       </form>
     </section>

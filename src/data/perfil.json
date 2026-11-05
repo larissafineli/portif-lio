@@ -67,7 +67,7 @@
     "projectsIntro": "Linha do tempo do que venho construindo durante a graduação, do mais antigo ao mais recente.",
     "experienceEyebrow": "Minha trajetória",
     "experienceTitle": "Experiências",
-    "experienceIntro": "Minha trajetória até aqui, entre a graduação e os projetos da faculdade.",
+    "experienceIntro": "Minha trajetória até aqui, entre a graduação, trabalhos freelancer e os projetos da faculdade.",
     "contactTitle": "Contato",
     "contactChannels": "Você pode falar comigo por:",
     "contactEmail": "E-mail",
@@ -113,7 +113,9 @@
     "vMessage": "Escreva uma mensagem com pelo menos 10 caracteres.",
     "contactWhatsapp": "WhatsApp",
     "nav": "Principal",
-    "langLabel": "Idioma"
+    "langLabel": "Idioma",
+    "kindFreelancer": "Freelancer",
+    "formMailto": "Abrir no meu app de e-mail"
   },
   "en": {
     "skip": "Skip to content",
@@ -138,7 +140,7 @@
     "projectsIntro": "A timeline of what I’ve been building during my degree, from oldest to newest.",
     "experienceEyebrow": "My background",
     "experienceTitle": "Experience",
-    "experienceIntro": "My path so far, through my degree and university projects.",
+    "experienceIntro": "My path so far, through my degree, freelance work and university projects.",
     "contactTitle": "Contact",
     "contactChannels": "You can reach me through:",
     "contactEmail": "Email",
@@ -184,7 +186,9 @@
     "vMessage": "Write a message with at least 10 characters.",
     "contactWhatsapp": "WhatsApp",
     "nav": "Main navigation",
-    "langLabel": "Language"
+    "langLabel": "Language",
+    "kindFreelancer": "Freelance",
+    "formMailto": "Open in my email app"
   },
   "whatsapp": "+55 31 99799-1668"
 }

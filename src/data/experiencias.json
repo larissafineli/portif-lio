@@ -16,6 +16,42 @@
       "local": "Belo Horizonte, MG"
     },
     {
+      "tipo": "freelancer",
+      "instituicao": "Buffet infantil",
+      "periodo": "Freelancer",
+      "inicio": "2026",
+      "pt": {
+        "cargo": "Freelancer em buffet infantil",
+        "instituicao": "Buffet infantil",
+        "periodo": "Freelancer",
+        "descricao": "Atuação em eventos de buffet infantil, com atendimento ao público e apoio à equipe durante as festas."
+      },
+      "en": {
+        "cargo": "Freelancer at a children’s party venue",
+        "instituicao": "Children’s party venue",
+        "periodo": "Freelance",
+        "descricao": "Worked at children’s parties, helping customers and supporting the team during events."
+      }
+    },
+    {
+      "tipo": "freelancer",
+      "instituicao": "Marketing digital",
+      "periodo": "Freelancer",
+      "inicio": "2026",
+      "pt": {
+        "cargo": "Freelancer em marketing de Instagram",
+        "instituicao": "Marketing digital",
+        "periodo": "Freelancer",
+        "descricao": "Criação e gestão de conteúdo para perfis no Instagram, com foco em divulgação e engajamento."
+      },
+      "en": {
+        "cargo": "Instagram marketing freelancer",
+        "instituicao": "Digital marketing",
+        "periodo": "Freelance",
+        "descricao": "Created and managed content for Instagram profiles, focused on promotion and engagement."
+      }
+    },
+    {
       "tipo": "projetos",
       "instituicao": "Disciplinas do curso",
       "periodo": "2026 · projetos",

@@ -20,14 +20,16 @@ export default function Experience() {
         {itens.length === 0 && <p className="content-status">{t.noExperiences}</p>}
         {itens.map((item) => {
           const d = item[lang];
-          const edu = item.tipo === 'formacao';
+                    const kind = { formacao: t.kindFormacao, freelancer: t.kindFreelancer }[item.tipo] || t.kindProjeto;
+          const icon = { formacao: 'cap', freelancer: 'briefcase' }[item.tipo] || 'code';
           const inst = d.instituicao || item.instituicao;
           return (
             <article className="timeline-row" key={`${item.instituicao}-${item.inicio}`}>
-              <span className="timeline-mark"><Icon name={edu ? 'cap' : 'code'} /></span>
+              <span className="timeline-mark"><Icon name={icon} /></span>
               <h2>{d.cargo}</h2>
               <p className="organization">{item.local ? `${inst} · ${item.local}` : inst}</p>
-              <p className="kind">{edu ? t.kindFormacao : t.kindProjeto}</p>
+              <p className="kind">{kind}</p>
+              {d.descricao && <p className="description">{d.descricao}</p>}
               <span className="period">{d.periodo || item.periodo}</span>
             </article>
           );

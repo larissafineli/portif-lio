@@ -30,6 +30,7 @@
 ## 🔗 Links Úteis
 * 🌐 **Site publicado:** <https://larissafineli.github.io/portif-lio/>
 * 💻 **Repositório:** <https://github.com/larissafineli/portif-lio>
+* 🎨 **Wireframes (Figma):** <https://www.figma.com/design/GBf7Lv60NVMaCU29WXa1aT/Sem-t%C3%ADtulo?node-id=1-2&t=sBcAChdgyhKpDDlz-1> (arquivos SVG também em [`docs/wireframes/`](docs/wireframes))
 
 ---
 
@@ -152,6 +153,7 @@ Endereço: <https://larissafineli.github.io/portif-lio/>
 ```text
 portif-lio/
 ├── .github/workflows/deploy.yml   # Build e deploy no GitHub Pages
+├── docs/wireframes/               # Wireframes das 4 páginas (SVG, importados no Figma)
 ├── public/
 │   └── assets/
 │       ├── 3d/                    # Ícones 3D (CC0)

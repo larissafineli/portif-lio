@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { useLanguage } from '../context/LanguageContext.jsx';
 import Icon, { asset } from '../components/Icon.jsx';
 
-const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 export default function Contact() {
   const { t, perfil } = useLanguage();
@@ -20,25 +19,22 @@ export default function Contact() {
   ];
 
   async function onSubmit(data) {
-    if (!ACCESS_KEY) {
-      setStatus('missing');
-      return;
-    }
     setStatus('sending');
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(`https://formsubmit.co/ajax/${perfil.email}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          subject: `Contato do portfólio: ${data.nome}`,
+          _subject: `Contato do portfólio: ${data.nome}`,
+          _template: 'table',
+          _captcha: 'false',
           name: data.nome,
           email: data.email,
           message: data.mensagem
         })
       });
       const json = await res.json();
-      if (!json.success) throw new Error(json.message || 'Falha no envio');
+      if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || 'Falha no envio');
       setStatus('success');
       reset();
     } catch (err) {

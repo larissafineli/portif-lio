@@ -45,7 +45,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 - 🌐 **Sobre mim em português e inglês**: formação, área de atuação, interesses e objetivos. O idioma é trocado em PT/EN e lembrado entre visitas.
 - 🕒 **Projetos em linha do tempo**, do mais antigo ao mais recente, com nome, descrição, tecnologias, link do GitHub e imagem do projeto em funcionamento.
 - 💼 **Experiências** organizadas por instituição, atividade, período e descrição.
-- ✉️ **Contato** com ícones clicáveis (e-mail, LinkedIn, GitHub e WhatsApp) e **formulário** com envio por e-mail via Web3Forms.
+- ✉️ **Contato** com ícones clicáveis (e-mail, LinkedIn, GitHub e WhatsApp) e **formulário** com envio por e-mail via FormSubmit.
 - ✅ **Validações** no formulário com React Hook Form: nome (mín. 2 caracteres), e-mail válido e mensagem (mín. 10 caracteres), com mensagens de erro acessíveis.
 - 📱 **Design responsivo** e identidade visual em bege, branco e rosa.
 
@@ -65,7 +65,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 * **Linguagem:** JavaScript (ES modules) + JSX
 * **Roteamento:** React Router (`HashRouter`, compatível com GitHub Pages)
 * **Formulário:** React Hook Form
-* **Envio de e-mail:** Web3Forms (API chamada direto do front-end, sem back-end próprio)
+* **Envio de e-mail:** FormSubmit (chamado direto do front-end, sem back-end próprio)
 * **Estilização:** CSS próprio com variáveis (tokens) e layouts responsivos
 * **Tipografia e ícones:** Manrope (local, licença OFL), sprite SVG, logos de tecnologias e ícones 3D (3dicons, CC0)
 
@@ -73,7 +73,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 * **Hospedagem:** GitHub Pages (gratuito), publicado por GitHub Actions
 * **Versionamento:** Git e GitHub
 
-> Não há back-end próprio: o conteúdo vem de arquivos JSON no projeto e o e-mail é enviado pelo Web3Forms.
+> Não há back-end próprio: o conteúdo vem de arquivos JSON no projeto e o e-mail é enviado pelo FormSubmit.
 
 ---
 
@@ -93,7 +93,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 
 ```text
 JSON (src/data) ──► páginas React ──► LanguageContext (PT/EN) ──► UI
-                                  └─► Contato ──► React Hook Form ──► Web3Forms ──► caixa de entrada
+                                  └─► Contato ──► React Hook Form ──► FormSubmit ──► caixa de entrada
 ```
 
 - **Dados separados da interface:** perfil, textos PT/EN, projetos e experiências ficam em `src/data/*.json`; as páginas apenas renderizam.
@@ -109,17 +109,12 @@ JSON (src/data) ──► páginas React ──► LanguageContext (PT/EN) ─�
 * [Node.js](https://nodejs.org/) 20 ou superior
 * npm
 
-### Variáveis de ambiente (formulário de contato)
-O envio de e-mail usa o [Web3Forms](https://web3forms.com/) (gratuito, sem back-end próprio):
+### Formulário de contato
+O envio de e-mail usa o [FormSubmit](https://formsubmit.co/) (gratuito, sem conta e sem chave):
 
-1. No site do Web3Forms, informe o e-mail que vai receber as mensagens e clique em **Create Access Key**. A chave chega por e-mail.
-2. Copie `.env.example` para `.env` e preencha:
-
-```bash
-VITE_WEB3FORMS_KEY=sua-chave-aqui
-```
-
-> A chave do Web3Forms é feita para ficar no front-end. Sem ela, o formulário valida os campos e avisa que o envio não está configurado.
+* O formulário faz um `POST` para `https://formsubmit.co/ajax/<e-mail>`, e o FormSubmit encaminha a mensagem para a caixa de entrada.
+* **Ativação (uma vez):** no primeiro envio, o FormSubmit manda um e-mail de confirmação; basta clicar em **Activate Form**. Depois disso, as mensagens chegam normalmente.
+* Não há variáveis de ambiente nem segredos a configurar.
 
 ### Como executar
 
@@ -147,8 +142,7 @@ O deploy é automático no **GitHub Pages** a cada push na `main`, pelo workflow
 
 Configuração única no repositório:
 1. **Settings → Pages → Source:** selecione **GitHub Actions**.
-2. **Settings → Secrets and variables → Actions:** crie `VITE_WEB3FORMS_KEY`.
-3. Faça um push na `main` (ou rode o workflow manualmente em **Actions**).
+2. Faça um push na `main` (ou rode o workflow manualmente em **Actions**).
 
 Endereço: <https://larissafineli.github.io/portif-lio/>
 
@@ -175,7 +169,7 @@ portif-lio/
 │   ├── styles/style.css
 │   ├── App.jsx                    # Rotas
 │   └── main.jsx                   # Entrada da aplicação
-├── .env.example                   # Modelo das variável do Web3Forms
+├── .env.example                   # (sem variáveis necessárias)
 ├── index.html
 ├── package.json
 └── vite.config.js

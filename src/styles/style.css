@@ -524,3 +524,22 @@ body {
   .contact-list { grid-template-columns: minmax(0, 1fr); }
   .contact-list li:nth-child(n+2) .contact-link { border-top: 0; }
 }
+
+/* Cabeçalho compacto, flutuante e arredondado */
+.topbar {
+  top: 12px;
+  min-height: 68px;
+  margin: 12px -12px 0;
+  padding: 0 24px;
+  border: 1px solid rgba(255, 255, 255, .75);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .5);
+  box-shadow: 0 8px 28px #832c4a1a, inset 0 1px 0 #ffffffb3;
+}
+.site-nav a { min-height: 44px; }
+.page-head { padding-top: 48px; }
+@media (max-width: 760px) {
+  .topbar { margin: 10px 0 0; padding: 8px 16px 4px; top: 10px; border-radius: 18px; }
+  .site-nav { margin-top: 2px; }
+  .site-nav a { min-height: 44px; }
+}

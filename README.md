@@ -30,7 +30,6 @@
 ## 🔗 Links Úteis
 * 🌐 **Site publicado:** <https://larissafineli.github.io/portif-lio/>
 * 💻 **Repositório:** <https://github.com/larissafineli/portif-lio>
-* 🎨 **Wireframes (Figma):** _adicione aqui o link do arquivo no Figma_
 
 ---
 

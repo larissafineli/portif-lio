@@ -13,8 +13,7 @@ const bio = [
 
 export default function About() {
   const { t, perfil, lang } = useLanguage();
-  const [first, ...rest] = perfil.nome.split(' ');
-  const destaque = projetos[projetos.length - 1];
+    const destaque = projetos[projetos.length - 1];
 
   return (
     <>
@@ -24,7 +23,7 @@ export default function About() {
             <img className="section-3d section-3d--about" src={asset('3d/about-computer.webp')} width="360" height="360" alt="" aria-hidden="true" />
             <p className="eyebrow">{t.heroKicker}</p>
           </div>
-          <h1 id="home-title">{first} <span>{rest.join(' ')}</span></h1>
+          <h1 id="home-title">{perfil.nome}</h1>
           <p className="intro">{t.heroIntro}</p>
           <div className="hero-actions">
             <Link className="button" to="/projetos"><span>{t.viewProjects}</span><Icon name="arrow" /></Link>

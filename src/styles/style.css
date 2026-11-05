@@ -244,7 +244,6 @@ main { flex: 1; min-width: 0; padding-bottom: 52px; }
   margin-top: 16px;
   white-space: nowrap;
 }
-.hero-copy h1 span { color: var(--rose); }
 .hero-copy .intro {
   max-width: 540px;
   margin-top: 24px;

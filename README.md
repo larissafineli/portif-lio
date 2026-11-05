@@ -45,7 +45,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 - 🌐 **Sobre mim em português e inglês**: formação, área de atuação, interesses e objetivos. O idioma é trocado em PT/EN e lembrado entre visitas.
 - 🕒 **Projetos em linha do tempo**, do mais antigo ao mais recente, com nome, descrição, tecnologias, link do GitHub e imagem do projeto em funcionamento.
 - 💼 **Experiências** organizadas por instituição, atividade, período e descrição.
-- ✉️ **Contato** com ícones clicáveis (e-mail, LinkedIn, GitHub e WhatsApp) e **formulário** com envio por e-mail via EmailJS.
+- ✉️ **Contato** com ícones clicáveis (e-mail, LinkedIn, GitHub e WhatsApp) e **formulário** com envio por e-mail via Web3Forms.
 - ✅ **Validações** no formulário com React Hook Form: nome (mín. 2 caracteres), e-mail válido e mensagem (mín. 10 caracteres), com mensagens de erro acessíveis.
 - 📱 **Design responsivo** e identidade visual em bege, branco e rosa.
 
@@ -65,7 +65,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 * **Linguagem:** JavaScript (ES modules) + JSX
 * **Roteamento:** React Router (`HashRouter`, compatível com GitHub Pages)
 * **Formulário:** React Hook Form
-* **Envio de e-mail:** EmailJS (direto do front-end, sem back-end próprio)
+* **Envio de e-mail:** Web3Forms (API chamada direto do front-end, sem back-end próprio)
 * **Estilização:** CSS próprio com variáveis (tokens) e layouts responsivos
 * **Tipografia e ícones:** Manrope (local, licença OFL), sprite SVG, logos de tecnologias e ícones 3D (3dicons, CC0)
 
@@ -73,7 +73,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 * **Hospedagem:** GitHub Pages (gratuito), publicado por GitHub Actions
 * **Versionamento:** Git e GitHub
 
-> Não há back-end próprio: o conteúdo vem de arquivos JSON no projeto e o e-mail é enviado pelo EmailJS.
+> Não há back-end próprio: o conteúdo vem de arquivos JSON no projeto e o e-mail é enviado pelo Web3Forms.
 
 ---
 
@@ -84,7 +84,6 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 | `react` / `react-dom` | ^19.3 | Interface |
 | `react-router-dom` | ^7.18 | Navegação entre páginas |
 | `react-hook-form` | ^7.91 | Formulário e validações |
-| `@emailjs/browser` | ^5.0 | Envio de e-mail |
 | `vite` (dev) | ^8.3 | Servidor de desenvolvimento e build |
 | `@vitejs/plugin-react` (dev) | ^6.2 | Suporte a React no Vite |
 
@@ -94,7 +93,7 @@ Site de portfólio para apresentar minha trajetória, habilidades, projetos e fo
 
 ```text
 JSON (src/data) ──► páginas React ──► LanguageContext (PT/EN) ──► UI
-                                  └─► Contato ──► React Hook Form ──► EmailJS ──► caixa de entrada
+                                  └─► Contato ──► React Hook Form ──► Web3Forms ──► caixa de entrada
 ```
 
 - **Dados separados da interface:** perfil, textos PT/EN, projetos e experiências ficam em `src/data/*.json`; as páginas apenas renderizam.
@@ -111,19 +110,16 @@ JSON (src/data) ──► páginas React ──► LanguageContext (PT/EN) ─�
 * npm
 
 ### Variáveis de ambiente (formulário de contato)
-O envio de e-mail usa o [EmailJS](https://www.emailjs.com/) (plano gratuito):
+O envio de e-mail usa o [Web3Forms](https://web3forms.com/) (gratuito, sem back-end próprio):
 
-1. Crie uma conta, adicione um **Email Service** e um **Email Template**.
-2. No template, use as variáveis `{{from_name}}`, `{{reply_to}}` e `{{message}}`.
-3. Copie `.env.example` para `.env` e preencha:
+1. No site do Web3Forms, informe o e-mail que vai receber as mensagens e clique em **Create Access Key**. A chave chega por e-mail.
+2. Copie `.env.example` para `.env` e preencha:
 
 ```bash
-VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
-VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
-VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxx
+VITE_WEB3FORMS_KEY=sua-chave-aqui
 ```
 
-> A chave pública do EmailJS é feita para ficar no front-end. Sem essas variáveis, o formulário valida os campos e avisa que o envio não está configurado.
+> A chave do Web3Forms é feita para ficar no front-end. Sem ela, o formulário valida os campos e avisa que o envio não está configurado.
 
 ### Como executar
 
@@ -151,7 +147,7 @@ O deploy é automático no **GitHub Pages** a cada push na `main`, pelo workflow
 
 Configuração única no repositório:
 1. **Settings → Pages → Source:** selecione **GitHub Actions**.
-2. **Settings → Secrets and variables → Actions:** crie `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID` e `VITE_EMAILJS_PUBLIC_KEY`.
+2. **Settings → Secrets and variables → Actions:** crie `VITE_WEB3FORMS_KEY`.
 3. Faça um push na `main` (ou rode o workflow manualmente em **Actions**).
 
 Endereço: <https://larissafineli.github.io/portif-lio/>
@@ -179,7 +175,7 @@ portif-lio/
 │   ├── styles/style.css
 │   ├── App.jsx                    # Rotas
 │   └── main.jsx                   # Entrada da aplicação
-├── .env.example                   # Modelo das variáveis do EmailJS
+├── .env.example                   # Modelo das variável do Web3Forms
 ├── index.html
 ├── package.json
 └── vite.config.js

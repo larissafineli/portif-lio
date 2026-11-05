@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
 import { useLanguage } from '../context/LanguageContext.jsx';
 import Icon, { asset } from '../components/Icon.jsx';
 
-const EMAILJS = {
-  service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  key: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-};
+const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 export default function Contact() {
   const { t, perfil } = useLanguage();
@@ -25,18 +20,25 @@ export default function Contact() {
   ];
 
   async function onSubmit(data) {
-    if (!EMAILJS.service || !EMAILJS.template || !EMAILJS.key) {
+    if (!ACCESS_KEY) {
       setStatus('missing');
       return;
     }
     setStatus('sending');
     try {
-      await emailjs.send(
-        EMAILJS.service,
-        EMAILJS.template,
-        { from_name: data.nome, reply_to: data.email, message: data.mensagem, to_email: perfil.email },
-        { publicKey: EMAILJS.key }
-      );
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: `Contato do portfólio: ${data.nome}`,
+          name: data.nome,
+          email: data.email,
+          message: data.mensagem
+        })
+      });
+      const json = await res.json();
+      if (!json.success) throw new Error(json.message || 'Falha no envio');
       setStatus('success');
       reset();
     } catch (err) {

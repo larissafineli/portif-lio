@@ -1,0 +1,50 @@
+[
+  {
+    "id": "receitas-de-minas",
+    "nome": "Receitas de Minas",
+    "publicadoEm": "2026-03-02",
+    "tecnologias": [
+      "HTML5",
+      "CSS3"
+    ],
+    "repositorio": "https://github.com/larissafineli/receitas-de-minas",
+    "imagem": "projetos/receitas-de-minas.webp",
+    "pt": {
+      "tipo": "HTML e CSS",
+      "descricao": "Site com receitas típicas mineiras, organizado em HTML e estilizado com CSS.",
+      "contribuicao": "Criei a estrutura das páginas, a estilização e o conteúdo das receitas, com imagens dos pratos.",
+      "alt": "Página do Receitas de Minas com a receita de pão de queijo, ingredientes e modo de preparo."
+    },
+    "en": {
+      "tipo": "HTML and CSS",
+      "descricao": "A website with traditional recipes from Minas Gerais, structured in HTML and styled with CSS.",
+      "contribuicao": "I built the page structure, the styling and the recipe content, including photos of the dishes.",
+      "alt": "Receitas de Minas page showing the pão de queijo recipe with ingredients and instructions."
+    }
+  },
+  {
+    "id": "votacao-fazenda",
+    "nome": "Votação A Fazenda 2026",
+    "publicadoEm": "2026-10-29",
+    "tecnologias": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS3"
+    ],
+    "repositorio": "https://github.com/larissafineli/VotacaoFazenda",
+    "imagem": "projetos/votacao-fazenda.webp",
+    "pt": {
+      "tipo": "React + Vite",
+      "descricao": "Aplicação web de votação inspirada em A Fazenda 2026: o usuário escolhe quem eliminar entre os participantes na roça, vê a confirmação do voto e acompanha o resultado parcial.",
+      "contribuicao": "Desenvolvi as páginas (Home, Votação e Resultado) com React Router, componentes reutilizáveis e um serviço que guarda os votos no localStorage.",
+      "alt": "Tela de votação com os participantes na roça e o botão para registrar o voto."
+    },
+    "en": {
+      "tipo": "React + Vite",
+      "descricao": "A voting web app inspired by A Fazenda 2026: users pick who to eliminate among the contestants up for elimination, get a vote confirmation and follow the partial results.",
+      "contribuicao": "I built the pages (Home, Voting and Results) with React Router, reusable components and a service that stores votes in localStorage.",
+      "alt": "Voting screen showing the contestants up for elimination and the button to cast a vote."
+    }
+  }
+]
